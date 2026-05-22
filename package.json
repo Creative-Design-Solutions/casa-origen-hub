@@ -1,0 +1,43 @@
+{
+  "name": "origen-backend",
+  "version": "0.1.0",
+  "description": "AI-augmented back office for independent, mission-driven restaurants. Read-only orchestration of POS, accounting, inventory, and payroll systems.",
+  "type": "module",
+  "main": "dist/index.js",
+  "private": true,
+  "scripts": {
+    "build": "tsc --build",
+    "dev": "tsc --build --watch",
+    "clean": "tsc --build --clean",
+    "seed": "node --loader ts-node/esm scripts/seed-synthetic.ts",
+    "start:pos": "node --loader ts-node/esm mcp-servers/pos-adapter/src/index.ts",
+    "start:accounting": "node --loader ts-node/esm mcp-servers/accounting/src/index.ts",
+    "test": "node --test"
+  },
+  "keywords": [
+    "restaurant",
+    "operations",
+    "AI",
+    "orchestration",
+    "POS",
+    "accounting",
+    "inventory"
+  ],
+  "author": "Creative Design Solutions",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  },
+  "dependencies": {
+    "@anthropic-sdk/sdk": "^0.1.0"
+  },
+  "workspaces": [
+    "mcp-servers/pos-adapter",
+    "mcp-servers/accounting",
+    "mcp-servers/invoices",
+    "mcp-servers/traceability",
+    "mcp-servers/payroll"
+  ]
+}

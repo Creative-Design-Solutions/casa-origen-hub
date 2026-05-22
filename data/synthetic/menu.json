@@ -1,0 +1,178 @@
+{
+  "menu": {
+    "version": "1.0",
+    "restaurant": "Casa Origen",
+    "day_parts": ["breakfast", "lunch"],
+    "categories": [
+      {
+        "id": "cat-breakfast-bowls",
+        "name": "Breakfast Bowls",
+        "day_part": "breakfast",
+        "items": [
+          {
+            "id": "item-001",
+            "name": "The Origen Bowl",
+            "price": 16.00,
+            "description": "Pasture-raised eggs, seasonal roasted vegetables, grain-free sweet potato hash, herb oil",
+            "ingredients": [
+              { "ingredient_id": "ing-001", "name": "pasture-raised eggs", "quantity": 2, "unit": "each", "vendor_id": "vendor-002" },
+              { "ingredient_id": "ing-002", "name": "sweet potato", "quantity": 120, "unit": "grams", "vendor_id": "vendor-002" },
+              { "ingredient_id": "ing-003", "name": "seasonal vegetables", "quantity": 100, "unit": "grams", "vendor_id": "vendor-001" },
+              { "ingredient_id": "ing-004", "name": "grass-fed tallow", "quantity": 15, "unit": "grams", "vendor_id": "vendor-003" },
+              { "ingredient_id": "ing-005", "name": "fresh herbs", "quantity": 10, "unit": "grams", "vendor_id": "vendor-001" }
+            ],
+            "food_cost_target": 0.28,
+            "allergens": ["eggs"]
+          },
+          {
+            "id": "item-002",
+            "name": "Green Farm Scramble",
+            "price": 14.00,
+            "description": "Three pasture-raised eggs scrambled with Worden Farm greens, avocado, raw honey drizzle",
+            "ingredients": [
+              { "ingredient_id": "ing-001", "name": "pasture-raised eggs", "quantity": 3, "unit": "each", "vendor_id": "vendor-002" },
+              { "ingredient_id": "ing-006", "name": "mixed greens", "quantity": 60, "unit": "grams", "vendor_id": "vendor-001" },
+              { "ingredient_id": "ing-007", "name": "avocado", "quantity": 0.5, "unit": "each", "vendor_id": "vendor-004" },
+              { "ingredient_id": "ing-008", "name": "raw wildflower honey", "quantity": 8, "unit": "grams", "vendor_id": "vendor-006" },
+              { "ingredient_id": "ing-004", "name": "grass-fed tallow", "quantity": 12, "unit": "grams", "vendor_id": "vendor-003" }
+            ],
+            "food_cost_target": 0.26,
+            "allergens": ["eggs"]
+          },
+          {
+            "id": "item-003",
+            "name": "Citrus & Honey Granola Bowl",
+            "price": 12.00,
+            "description": "House grain-free granola, coconut yogurt, Roser Farm citrus, Sarasota honey",
+            "ingredients": [
+              { "ingredient_id": "ing-009", "name": "grain-free granola", "quantity": 80, "unit": "grams", "vendor_id": "internal" },
+              { "ingredient_id": "ing-010", "name": "coconut yogurt", "quantity": 150, "unit": "grams", "vendor_id": "external" },
+              { "ingredient_id": "ing-011", "name": "fresh citrus", "quantity": 1, "unit": "each", "vendor_id": "vendor-004" },
+              { "ingredient_id": "ing-008", "name": "raw wildflower honey", "quantity": 15, "unit": "grams", "vendor_id": "vendor-006" }
+            ],
+            "food_cost_target": 0.22,
+            "allergens": ["tree_nuts", "coconut"]
+          }
+        ]
+      },
+      {
+        "id": "cat-lunch-bowls",
+        "name": "Lunch Bowls",
+        "day_part": "lunch",
+        "items": [
+          {
+            "id": "item-004",
+            "name": "Grassfed Beef Bowl",
+            "price": 18.00,
+            "description": "SunCoast Pastures ground beef, arugula, roasted peppers, sweet potato, herb vinaigrette",
+            "ingredients": [
+              { "ingredient_id": "ing-012", "name": "grass-fed ground beef", "quantity": 150, "unit": "grams", "vendor_id": "vendor-003" },
+              { "ingredient_id": "ing-013", "name": "arugula", "quantity": 60, "unit": "grams", "vendor_id": "vendor-001" },
+              { "ingredient_id": "ing-014", "name": "roasted peppers", "quantity": 80, "unit": "grams", "vendor_id": "vendor-001" },
+              { "ingredient_id": "ing-002", "name": "sweet potato", "quantity": 100, "unit": "grams", "vendor_id": "vendor-002" },
+              { "ingredient_id": "ing-004", "name": "grass-fed tallow", "quantity": 15, "unit": "grams", "vendor_id": "vendor-003" }
+            ],
+            "food_cost_target": 0.30,
+            "allergens": []
+          },
+          {
+            "id": "item-005",
+            "name": "Harvest Chicken Bowl",
+            "price": 17.00,
+            "description": "Pastured chicken, seasonal squash, kale, avocado, lemon herb dressing",
+            "ingredients": [
+              { "ingredient_id": "ing-015", "name": "pastured chicken breast", "quantity": 140, "unit": "grams", "vendor_id": "vendor-003" },
+              { "ingredient_id": "ing-016", "name": "seasonal squash", "quantity": 100, "unit": "grams", "vendor_id": "vendor-002" },
+              { "ingredient_id": "ing-017", "name": "kale", "quantity": 70, "unit": "grams", "vendor_id": "vendor-001" },
+              { "ingredient_id": "ing-007", "name": "avocado", "quantity": 0.5, "unit": "each", "vendor_id": "vendor-004" },
+              { "ingredient_id": "ing-005", "name": "fresh herbs", "quantity": 8, "unit": "grams", "vendor_id": "vendor-001" }
+            ],
+            "food_cost_target": 0.29,
+            "allergens": []
+          },
+          {
+            "id": "item-006",
+            "name": "Farm Greens Salad",
+            "price": 14.00,
+            "description": "Worden Farm mixed greens, microgreens, seasonal vegetables, avocado, lemon & EVOO",
+            "ingredients": [
+              { "ingredient_id": "ing-006", "name": "mixed greens", "quantity": 90, "unit": "grams", "vendor_id": "vendor-001" },
+              { "ingredient_id": "ing-018", "name": "microgreens", "quantity": 20, "unit": "grams", "vendor_id": "vendor-004" },
+              { "ingredient_id": "ing-003", "name": "seasonal vegetables", "quantity": 80, "unit": "grams", "vendor_id": "vendor-001" },
+              { "ingredient_id": "ing-007", "name": "avocado", "quantity": 0.5, "unit": "each", "vendor_id": "vendor-004" }
+            ],
+            "food_cost_target": 0.24,
+            "allergens": []
+          }
+        ]
+      },
+      {
+        "id": "cat-coffee",
+        "name": "Coffee & Drinks",
+        "day_part": "all",
+        "items": [
+          {
+            "id": "item-007",
+            "name": "Drip Coffee",
+            "price": 4.00,
+            "ingredients": [
+              { "ingredient_id": "ing-019", "name": "house blend beans", "quantity": 18, "unit": "grams", "vendor_id": "vendor-005" }
+            ],
+            "food_cost_target": 0.12,
+            "allergens": []
+          },
+          {
+            "id": "item-008",
+            "name": "Espresso",
+            "price": 4.50,
+            "ingredients": [
+              { "ingredient_id": "ing-019", "name": "house blend beans", "quantity": 20, "unit": "grams", "vendor_id": "vendor-005" }
+            ],
+            "food_cost_target": 0.10,
+            "allergens": []
+          },
+          {
+            "id": "item-009",
+            "name": "Honey Latte",
+            "price": 6.50,
+            "ingredients": [
+              { "ingredient_id": "ing-019", "name": "house blend beans", "quantity": 20, "unit": "grams", "vendor_id": "vendor-005" },
+              { "ingredient_id": "ing-008", "name": "raw wildflower honey", "quantity": 12, "unit": "grams", "vendor_id": "vendor-006" }
+            ],
+            "food_cost_target": 0.14,
+            "allergens": []
+          }
+        ]
+      },
+      {
+        "id": "cat-retail",
+        "name": "Retail",
+        "day_part": "all",
+        "items": [
+          {
+            "id": "item-010",
+            "name": "Foundation Coffee — House Blend 250g",
+            "price": 22.00,
+            "sku": "RTL-COFFEE-001",
+            "ingredients": [
+              { "ingredient_id": "ing-020", "name": "house blend retail bag", "quantity": 1, "unit": "bag", "vendor_id": "vendor-005" }
+            ],
+            "food_cost_target": 0.35,
+            "allergens": []
+          },
+          {
+            "id": "item-011",
+            "name": "Sarasota Raw Honey 300g",
+            "price": 18.00,
+            "sku": "RTL-HONEY-001",
+            "ingredients": [
+              { "ingredient_id": "ing-021", "name": "raw honey retail jar", "quantity": 1, "unit": "jar", "vendor_id": "vendor-006" }
+            ],
+            "food_cost_target": 0.38,
+            "allergens": []
+          }
+        ]
+      }
+    ]
+  }
+}

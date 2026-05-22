@@ -1,0 +1,76 @@
+{
+  "vendors": [
+    {
+      "id": "vendor-001",
+      "name": "Worden Farm",
+      "type": "farm",
+      "location": "Punta Gorda, FL",
+      "distance_miles": 85,
+      "certifications": ["USDA Organic", "Certified Naturally Grown"],
+      "contact": "Chris Worden",
+      "email": "chris@wordenfarm.com",
+      "invoice_format": "email_pdf",
+      "supplies": ["mixed greens", "kale", "arugula", "herbs", "tomatoes", "peppers"]
+    },
+    {
+      "id": "vendor-002",
+      "name": "Gamble Creek Farm",
+      "type": "farm",
+      "location": "Parrish, FL",
+      "distance_miles": 42,
+      "certifications": ["USDA Organic"],
+      "contact": "Bethany Gamble",
+      "email": "bethany@gamblecreekfarm.com",
+      "invoice_format": "handwritten_slip",
+      "supplies": ["eggs", "seasonal vegetables", "sweet potatoes", "squash"]
+    },
+    {
+      "id": "vendor-003",
+      "name": "SunCoast Pastures",
+      "type": "farm",
+      "location": "Myakka City, FL",
+      "distance_miles": 58,
+      "certifications": ["AGA Grassfed", "Certified Humane"],
+      "contact": "Dale Renfroe",
+      "email": "dale@suncoastpastures.com",
+      "invoice_format": "square_invoice",
+      "supplies": ["grass-fed beef tallow", "grass-fed ground beef", "pastured chicken"]
+    },
+    {
+      "id": "vendor-004",
+      "name": "Roser Community Farm",
+      "type": "farm",
+      "location": "Anna Maria Island, FL",
+      "distance_miles": 65,
+      "certifications": ["Naturally Grown"],
+      "contact": "Maria Alves",
+      "email": "maria@roserfarm.org",
+      "invoice_format": "email_pdf",
+      "supplies": ["citrus", "avocados", "tropical fruits", "microgreens"]
+    },
+    {
+      "id": "vendor-005",
+      "name": "Foundation Coffee Roasters",
+      "type": "coffee_roaster",
+      "location": "St. Petersburg, FL",
+      "distance_miles": 3,
+      "certifications": ["Direct Trade"],
+      "contact": "James Park",
+      "email": "james@foundationcoffee.com",
+      "invoice_format": "email_pdf",
+      "supplies": ["house blend beans", "single origin beans", "retail bags"]
+    },
+    {
+      "id": "vendor-006",
+      "name": "Sarasota Honey Company",
+      "type": "artisan",
+      "location": "Sarasota, FL",
+      "distance_miles": 55,
+      "certifications": ["Raw & Unfiltered"],
+      "contact": "Tom Bauer",
+      "email": "tom@sarasotahoney.com",
+      "invoice_format": "text_message",
+      "supplies": ["raw wildflower honey", "creamed honey"]
+    }
+  ]
+}

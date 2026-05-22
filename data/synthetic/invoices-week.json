@@ -1,0 +1,119 @@
+{
+  "invoices": [
+    {
+      "id": "inv-001",
+      "vendor_id": "vendor-001",
+      "vendor_name": "Worden Farm",
+      "invoice_number": "WF-2026-089",
+      "date": "2026-05-18",
+      "due_date": "2026-05-25",
+      "status": "paid",
+      "format": "email_pdf",
+      "total": 284.50,
+      "line_items": [
+        { "ingredient_id": "ing-006", "description": "Mixed Greens — 5 lbs", "qty": 5, "unit": "lbs", "unit_price": 14.00, "total": 70.00, "lot_number": "WF-MG-0518" },
+        { "ingredient_id": "ing-013", "description": "Arugula — 3 lbs", "qty": 3, "unit": "lbs", "unit_price": 16.00, "total": 48.00, "lot_number": "WF-AR-0518" },
+        { "ingredient_id": "ing-017", "description": "Kale — 4 lbs", "qty": 4, "unit": "lbs", "unit_price": 12.00, "total": 48.00, "lot_number": "WF-KL-0518" },
+        { "ingredient_id": "ing-014", "description": "Mixed Peppers — 6 lbs", "qty": 6, "unit": "lbs", "unit_price": 8.50, "total": 51.00, "lot_number": "WF-PP-0518" },
+        { "ingredient_id": "ing-005", "description": "Fresh Herbs Mix — 2 lbs", "qty": 2, "unit": "lbs", "unit_price": 18.00, "total": 36.00, "lot_number": "WF-HB-0518" },
+        { "ingredient_id": "ing-003", "description": "Seasonal Vegetables (tomato, zucchini) — 5 lbs", "qty": 5, "unit": "lbs", "unit_price": 6.30, "total": 31.50, "lot_number": "WF-SV-0518" }
+      ],
+      "notes": "All items organic certified. Harvest date: 2026-05-17."
+    },
+    {
+      "id": "inv-002",
+      "vendor_id": "vendor-002",
+      "vendor_name": "Gamble Creek Farm",
+      "invoice_number": "GCF-MAY-22",
+      "date": "2026-05-19",
+      "due_date": "2026-05-26",
+      "status": "paid",
+      "format": "handwritten_slip",
+      "total": 198.00,
+      "line_items": [
+        { "ingredient_id": "ing-001", "description": "Pasture-raised eggs — 10 dozen", "qty": 10, "unit": "dozen", "unit_price": 9.00, "total": 90.00, "lot_number": "GCF-EG-0519" },
+        { "ingredient_id": "ing-002", "description": "Sweet potatoes — 20 lbs", "qty": 20, "unit": "lbs", "unit_price": 3.20, "total": 64.00, "lot_number": "GCF-SP-0519" },
+        { "ingredient_id": "ing-016", "description": "Butternut squash — 12 lbs", "qty": 12, "unit": "lbs", "unit_price": 3.67, "total": 44.00, "lot_number": "GCF-SQ-0519" }
+      ],
+      "notes": "Cash on delivery. Handwritten receipt scanned."
+    },
+    {
+      "id": "inv-003",
+      "vendor_id": "vendor-003",
+      "vendor_name": "SunCoast Pastures",
+      "invoice_number": "SCP-2026-041",
+      "date": "2026-05-19",
+      "due_date": "2026-05-26",
+      "status": "paid",
+      "format": "square_invoice",
+      "total": 487.50,
+      "line_items": [
+        { "ingredient_id": "ing-012", "description": "Grass-fed ground beef — 15 lbs", "qty": 15, "unit": "lbs", "unit_price": 14.50, "total": 217.50, "lot_number": "SCP-GB-0519" },
+        { "ingredient_id": "ing-015", "description": "Pastured chicken breast — 18 lbs", "qty": 18, "unit": "lbs", "unit_price": 11.50, "total": 207.00, "lot_number": "SCP-CB-0519" },
+        { "ingredient_id": "ing-004", "description": "Grass-fed beef tallow — 5 lbs", "qty": 5, "unit": "lbs", "unit_price": 12.60, "total": 63.00, "lot_number": "SCP-TL-0519" }
+      ],
+      "price_alerts": [
+        { "ingredient_id": "ing-012", "note": "Ground beef up $1.50/lb from last week ($13.00 → $14.50). +11.5% increase.", "previous_price": 13.00, "current_price": 14.50, "pct_change": 11.54 }
+      ],
+      "notes": "AGA Grassfed certified. Lot numbers traceable to individual animals."
+    },
+    {
+      "id": "inv-004",
+      "vendor_id": "vendor-004",
+      "vendor_name": "Roser Community Farm",
+      "invoice_number": "RCF-0522",
+      "date": "2026-05-20",
+      "due_date": "2026-05-27",
+      "status": "pending",
+      "format": "email_pdf",
+      "total": 156.00,
+      "line_items": [
+        { "ingredient_id": "ing-007", "description": "Hass avocados — 2 cases (24 each)", "qty": 48, "unit": "each", "unit_price": 1.75, "total": 84.00, "lot_number": "RCF-AV-0520" },
+        { "ingredient_id": "ing-011", "description": "Valencia oranges — 10 lbs", "qty": 10, "unit": "lbs", "unit_price": 3.20, "total": 32.00, "lot_number": "RCF-CT-0520" },
+        { "ingredient_id": "ing-018", "description": "Microgreens — 1 lb", "qty": 1, "unit": "lbs", "unit_price": 40.00, "total": 40.00, "lot_number": "RCF-MG-0520" }
+      ],
+      "notes": "Due next Tuesday. Maria confirmed delivery."
+    },
+    {
+      "id": "inv-005",
+      "vendor_id": "vendor-005",
+      "vendor_name": "Foundation Coffee Roasters",
+      "invoice_number": "FCR-2026-118",
+      "date": "2026-05-20",
+      "due_date": "2026-06-03",
+      "status": "pending",
+      "format": "email_pdf",
+      "total": 312.00,
+      "line_items": [
+        { "ingredient_id": "ing-019", "description": "House blend — 10 lbs (service)", "qty": 10, "unit": "lbs", "unit_price": 18.00, "total": 180.00, "lot_number": "FCR-HB-0520" },
+        { "ingredient_id": "ing-020", "description": "House blend retail bags 250g — 12 units", "qty": 12, "unit": "each", "unit_price": 11.00, "total": 132.00, "lot_number": "FCR-RB-0520" }
+      ],
+      "notes": "Net 14 terms. Direct trade sourced — Colombian single origin this rotation."
+    },
+    {
+      "id": "inv-006",
+      "vendor_id": "vendor-006",
+      "vendor_name": "Sarasota Honey Company",
+      "invoice_number": "SHC-TEXT-051",
+      "date": "2026-05-21",
+      "due_date": "2026-05-21",
+      "status": "paid",
+      "format": "text_message",
+      "total": 85.00,
+      "line_items": [
+        { "ingredient_id": "ing-008", "description": "Raw wildflower honey — 5 lbs", "qty": 5, "unit": "lbs", "unit_price": 14.00, "total": 70.00, "lot_number": "SHC-WH-0521" },
+        { "ingredient_id": "ing-021", "description": "Raw honey retail jars 300g — 3 units", "qty": 3, "unit": "each", "unit_price": 5.00, "total": 15.00, "lot_number": "SHC-RJ-0521" }
+      ],
+      "notes": "Tom texted invoice details. Cash on pickup. Lot number from label batch SHC-0521."
+    }
+  ],
+  "week_totals": {
+    "total_invoiced": 1523.00,
+    "total_paid": 1054.50,
+    "total_pending": 468.00,
+    "alerts": [
+      "SunCoast Pastures ground beef up 11.5% — Grassfed Beef Bowl food cost impacted. Review pricing.",
+      "Roser Farm invoice pending — due 2026-05-27"
+    ]
+  }
+}

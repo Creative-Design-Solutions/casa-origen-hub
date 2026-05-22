@@ -1,0 +1,180 @@
+{
+  "week": {
+    "start": "2026-05-18",
+    "end": "2026-05-22",
+    "restaurant": "Casa Origen",
+    "location": "937 Central Avenue, St. Petersburg, FL"
+  },
+  "daily_summaries": [
+    {
+      "date": "2026-05-18",
+      "day": "Monday",
+      "covers": 87,
+      "gross_sales": 1842.50,
+      "net_sales": 1842.50,
+      "tax_collected": 128.98,
+      "discounts": 22.00,
+      "voids": 0,
+      "comps": 0,
+      "cash_deposit_expected": 1971.48,
+      "cash_deposit_actual": 1971.48,
+      "deposit_variance": 0.00,
+      "breakdown_by_category": {
+        "breakfast_bowls": 612.00,
+        "lunch_bowls": 824.50,
+        "coffee_drinks": 296.00,
+        "retail": 110.00
+      },
+      "top_items": [
+        { "item_id": "item-004", "name": "Grassfed Beef Bowl", "qty_sold": 24, "revenue": 432.00 },
+        { "item_id": "item-001", "name": "The Origen Bowl", "qty_sold": 21, "revenue": 336.00 },
+        { "item_id": "item-005", "name": "Harvest Chicken Bowl", "qty_sold": 18, "revenue": 306.00 }
+      ],
+      "payment_methods": {
+        "card": 1712.50,
+        "cash": 130.00
+      }
+    },
+    {
+      "date": "2026-05-19",
+      "day": "Tuesday",
+      "covers": 94,
+      "gross_sales": 1988.00,
+      "net_sales": 1988.00,
+      "tax_collected": 139.16,
+      "discounts": 15.00,
+      "voids": 16.00,
+      "comps": 0,
+      "cash_deposit_expected": 2127.16,
+      "cash_deposit_actual": 2127.16,
+      "deposit_variance": 0.00,
+      "breakdown_by_category": {
+        "breakfast_bowls": 658.00,
+        "lunch_bowls": 918.00,
+        "coffee_drinks": 302.00,
+        "retail": 110.00
+      },
+      "top_items": [
+        { "item_id": "item-004", "name": "Grassfed Beef Bowl", "qty_sold": 26, "revenue": 468.00 },
+        { "item_id": "item-001", "name": "The Origen Bowl", "qty_sold": 22, "revenue": 352.00 },
+        { "item_id": "item-005", "name": "Harvest Chicken Bowl", "qty_sold": 20, "revenue": 340.00 }
+      ],
+      "flags": [
+        { "type": "void", "amount": 16.00, "note": "Duplicate order — kitchen error, caught before delivery" }
+      ],
+      "payment_methods": {
+        "card": 1858.00,
+        "cash": 130.00
+      }
+    },
+    {
+      "date": "2026-05-20",
+      "day": "Wednesday",
+      "covers": 78,
+      "gross_sales": 1644.00,
+      "net_sales": 1644.00,
+      "tax_collected": 115.08,
+      "discounts": 40.00,
+      "voids": 0,
+      "comps": 32.00,
+      "cash_deposit_expected": 1759.08,
+      "cash_deposit_actual": 1759.08,
+      "deposit_variance": 0.00,
+      "breakdown_by_category": {
+        "breakfast_bowls": 560.00,
+        "lunch_bowls": 714.00,
+        "coffee_drinks": 280.00,
+        "retail": 90.00
+      },
+      "top_items": [
+        { "item_id": "item-004", "name": "Grassfed Beef Bowl", "qty_sold": 20, "revenue": 360.00 },
+        { "item_id": "item-001", "name": "The Origen Bowl", "qty_sold": 18, "revenue": 288.00 },
+        { "item_id": "item-002", "name": "Green Farm Scramble", "qty_sold": 16, "revenue": 224.00 }
+      ],
+      "flags": [
+        { "type": "comp", "amount": 32.00, "note": "Team meal — staff lunch, approved by manager" },
+        { "type": "discount", "amount": 40.00, "note": "Community partner discount — St. Pete farmers market vendors" }
+      ],
+      "payment_methods": {
+        "card": 1554.00,
+        "cash": 90.00
+      }
+    },
+    {
+      "date": "2026-05-21",
+      "day": "Thursday",
+      "covers": 102,
+      "gross_sales": 2156.00,
+      "net_sales": 2156.00,
+      "tax_collected": 150.92,
+      "discounts": 0,
+      "voids": 0,
+      "comps": 0,
+      "cash_deposit_expected": 2306.92,
+      "cash_deposit_actual": 2306.92,
+      "deposit_variance": 0.00,
+      "breakdown_by_category": {
+        "breakfast_bowls": 720.00,
+        "lunch_bowls": 986.00,
+        "coffee_drinks": 318.00,
+        "retail": 132.00
+      },
+      "top_items": [
+        { "item_id": "item-004", "name": "Grassfed Beef Bowl", "qty_sold": 28, "revenue": 504.00 },
+        { "item_id": "item-005", "name": "Harvest Chicken Bowl", "qty_sold": 24, "revenue": 408.00 },
+        { "item_id": "item-001", "name": "The Origen Bowl", "qty_sold": 23, "revenue": 368.00 }
+      ],
+      "payment_methods": {
+        "card": 2006.00,
+        "cash": 150.00
+      }
+    },
+    {
+      "date": "2026-05-22",
+      "day": "Friday",
+      "covers": 118,
+      "gross_sales": 2490.00,
+      "net_sales": 2490.00,
+      "tax_collected": 174.30,
+      "discounts": 0,
+      "voids": 0,
+      "comps": 16.00,
+      "cash_deposit_expected": 2664.30,
+      "cash_deposit_actual": 2648.30,
+      "deposit_variance": -16.00,
+      "breakdown_by_category": {
+        "breakfast_bowls": 832.00,
+        "lunch_bowls": 1134.00,
+        "coffee_drinks": 364.00,
+        "retail": 160.00
+      },
+      "top_items": [
+        { "item_id": "item-004", "name": "Grassfed Beef Bowl", "qty_sold": 33, "revenue": 594.00 },
+        { "item_id": "item-005", "name": "Harvest Chicken Bowl", "qty_sold": 27, "revenue": 459.00 },
+        { "item_id": "item-001", "name": "The Origen Bowl", "qty_sold": 26, "revenue": 416.00 }
+      ],
+      "flags": [
+        { "type": "deposit_variance", "amount": -16.00, "note": "Short $16 — cash count mismatch. Needs investigation." },
+        { "type": "comp", "amount": 16.00, "note": "Influencer visit — content creator meal, owner-approved" }
+      ],
+      "payment_methods": {
+        "card": 2310.00,
+        "cash": 180.00
+      }
+    }
+  ],
+  "week_totals": {
+    "covers": 479,
+    "gross_sales": 10120.50,
+    "tax_collected": 708.44,
+    "discounts": 77.00,
+    "voids": 16.00,
+    "comps": 48.00,
+    "total_deposited": 10828.94,
+    "average_check": 21.13,
+    "best_day": "2026-05-22",
+    "flags_requiring_attention": [
+      "Friday deposit short $16 — cash reconciliation needed"
+    ]
+  }
+}

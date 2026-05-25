@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Worden Farm",
+    "location": "Punta Gorda, FL",
+    "distance": 85,
+    "emoji": "🌿",
+    "certs": ["USDA Organic", "Certified Naturally Grown"],
+    "items": [
+      { "name": "Mixed Greens",  "lot": "WF-MG-0518" },
+      { "name": "Arugula",       "lot": "WF-AR-0518" },
+      { "name": "Kale",          "lot": "WF-KL-0518" },
+      { "name": "Fresh Herbs",   "lot": "WF-HB-0518" }
+    ]
+  },
+  {
+    "name": "SunCoast Pastures",
+    "location": "Myakka City, FL",
+    "distance": 58,
+    "emoji": "🐄",
+    "certs": ["AGA Grassfed", "Certified Humane"],
+    "items": [
+      { "name": "Grass-fed Ground Beef",  "lot": "SC-GB-0520" },
+      { "name": "Grass-fed Beef Tallow",  "lot": "SC-BT-0520" },
+      { "name": "Pastured Chicken",       "lot": "SC-PC-0520" }
+    ]
+  },
+  {
+    "name": "Gamble Creek Farm",
+    "location": "Parrish, FL",
+    "distance": 42,
+    "emoji": "🥚",
+    "certs": ["USDA Organic"],
+    "items": [
+      { "name": "Free-range Eggs",  "lot": "GC-EG-0519" },
+      { "name": "Sweet Potatoes",   "lot": "GC-SP-0519" }
+    ]
+  },
+  {
+    "name": "Roser Community Farm",
+    "location": "Anna Maria Island, FL",
+    "distance": 65,
+    "emoji": "🍋",
+    "certs": ["Naturally Grown"],
+    "items": [
+      { "name": "Avocados",  "lot": "RF-AV-0517" }
+    ]
+  },
+  {
+    "name": "Sweetwater Organic",
+    "location": "Tampa, FL",
+    "distance": 22,
+    "emoji": "☀️",
+    "certs": ["USDA Organic"],
+    "items": [
+      { "name": "Heirloom Tomatoes",  "lot": "SW-TM-0520" }
+    ]
+  },
+  {
+    "name": "Bee Haven Apiaries",
+    "location": "Sarasota, FL",
+    "distance": 60,
+    "emoji": "🍯",
+    "certs": ["Florida Certified"],
+    "items": [
+      { "name": "Wildflower Honey",  "lot": "LH-WH-0519" }
+    ]
+  },
+  {
+    "name": "Bandit Coffee Co.",
+    "location": "St. Petersburg, FL",
+    "distance": 2,
+    "emoji": "☕",
+    "certs": [],
+    "items": [
+      { "name": "Local Coffee Beans",  "lot": "CB-LB-0515" }
+    ]
+  }
+]

@@ -253,73 +253,8 @@
   </div>
 
   <script>
-    // ── Synthetic data — today's sourcing ─────────────────────────────────────
-    // In production this is generated server-side from MarginEdge invoice data
-    // tagged with lot context and linked to today's menu.
-
-    const TODAY_SOURCES = [
-      {
-        name: "Worden Farm",
-        location: "Punta Gorda, FL",
-        distance: 85,
-        emoji: "🌿",
-        certs: ["USDA Organic", "Certified Naturally Grown"],
-        items: [
-          { name: "Mixed Greens",   lot: "WF-MG-0518" },
-          { name: "Arugula",        lot: "WF-AR-0518" },
-          { name: "Kale",           lot: "WF-KL-0518" },
-          { name: "Fresh Herbs",    lot: "WF-HB-0518" },
-        ]
-      },
-      {
-        name: "SunCoast Pastures",
-        location: "Myakka City, FL",
-        distance: 58,
-        emoji: "🐄",
-        certs: ["AGA Grassfed", "Certified Humane"],
-        items: [
-          { name: "Grass-fed Ground Beef",  lot: "SC-GB-0520" },
-          { name: "Grass-fed Beef Tallow",  lot: "SC-BT-0520" },
-          { name: "Pastured Chicken",       lot: "SC-PC-0520" },
-        ]
-      },
-      {
-        name: "Gamble Creek Farm",
-        location: "Parrish, FL",
-        distance: 42,
-        emoji: "🥚",
-        certs: ["USDA Organic"],
-        items: [
-          { name: "Free-range Eggs",    lot: "GC-EG-0519" },
-          { name: "Sweet Potatoes",     lot: "GC-SP-0519" },
-        ]
-      },
-      {
-        name: "Roser Community Farm",
-        location: "Anna Maria Island, FL",
-        distance: 65,
-        emoji: "🍋",
-        certs: ["Naturally Grown"],
-        items: [
-          { name: "Citrus",        lot: "RF-CT-0517" },
-          { name: "Avocados",      lot: "RF-AV-0517" },
-          { name: "Microgreens",   lot: "RF-MG-0521" },
-        ]
-      },
-      {
-        name: "Sweetwater Organic",
-        location: "Tampa, FL",
-        distance: 22,
-        emoji: "☀️",
-        certs: ["USDA Organic"],
-        items: [
-          { name: "Heirloom Tomatoes",  lot: "SW-TM-0520" },
-          { name: "Cucumbers",          lot: "SW-CU-0520" },
-        ]
-      },
-    ];
-
     const MAX_DISTANCE = 120;
+    const API_BASE = 'http://localhost:8765';
 
     function renderDate() {
       const d = new Date();
@@ -327,38 +262,55 @@
         d.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
     }
 
-    function renderFarms() {
+    function renderFarm(farm) {
+      const pct = Math.min(100, Math.round((farm.distance / MAX_DISTANCE) * 100));
+      const card = document.createElement('div');
+      card.className = 'farm-card';
+      card.innerHTML = `
+        <div class="farm-header">
+          <div class="farm-badge">${farm.emoji || '🌱'}</div>
+          <div>
+            <div class="farm-name">${farm.name}</div>
+            <div class="farm-location">${farm.location}</div>
+          </div>
+        </div>
+        <div class="farm-certs">
+          ${(farm.certs || []).map(c => `<span class="cert">${c}</span>`).join('')}
+        </div>
+        <div class="farm-items">
+          ${(farm.items || []).map(item => `
+            <div class="farm-item">
+              <span class="item-name">${item.name}</span>
+              <span class="item-lot">Lot ${item.lot}</span>
+            </div>`).join('')}
+        </div>
+        <div class="farm-distance">
+          <span>${farm.distance} mi</span>
+          <div class="distance-bar">
+            <div class="distance-fill" style="width:${pct}%"></div>
+          </div>
+          <span>from St. Pete</span>
+        </div>`;
+      return card;
+    }
+
+    async function renderFarms() {
       const container = document.getElementById('farms-container');
-      for (const farm of TODAY_SOURCES) {
-        const pct = Math.min(100, Math.round((farm.distance / MAX_DISTANCE) * 100));
-        const card = document.createElement('div');
-        card.className = 'farm-card';
-        card.innerHTML = `
-          <div class="farm-header">
-            <div class="farm-badge">${farm.emoji}</div>
-            <div>
-              <div class="farm-name">${farm.name}</div>
-              <div class="farm-location">${farm.location}</div>
-            </div>
-          </div>
-          <div class="farm-certs">
-            ${farm.certs.map(c => `<span class="cert">${c}</span>`).join('')}
-          </div>
-          <div class="farm-items">
-            ${farm.items.map(item => `
-              <div class="farm-item">
-                <span class="item-name">${item.name}</span>
-                <span class="item-lot">Lot ${item.lot}</span>
-              </div>`).join('')}
-          </div>
-          <div class="farm-distance">
-            <span>${farm.distance} mi</span>
-            <div class="distance-bar">
-              <div class="distance-fill" style="width:${pct}%"></div>
-            </div>
-            <span>from St. Pete</span>
-          </div>`;
-        container.appendChild(card);
+      try {
+        const res = await fetch(`${API_BASE}/api/origen/trace/latest`);
+        if (!res.ok) throw new Error(`status ${res.status}`);
+        const farms = await res.json();
+        farms.forEach(farm => container.appendChild(renderFarm(farm)));
+      } catch (err) {
+        // Hub server not running — fall back to the last committed trace JSON
+        console.warn('Hub API unavailable, loading local fallback:', err.message);
+        try {
+          const res = await fetch('./trace-fallback.json');
+          const farms = await res.json();
+          farms.forEach(farm => container.appendChild(renderFarm(farm)));
+        } catch {
+          container.innerHTML = '<p style="text-align:center;color:var(--muted);padding:2rem">Sourcing data unavailable — run /traceability-report to generate.</p>';
+        }
       }
     }
 

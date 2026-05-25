@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where Your Food Comes From — Casa Origen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Syne:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:    #1e2318;
+      --muted:  #6b7260;
+      --cream:  #faf6ee;
+      --panel:  #f4efe4;
+      --sage:   #5a7a5e;
+      --sage-l: #e4ede5;
+      --gold:   #a07c3a;
+      --line:   rgba(30,35,24,0.10);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Syne', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    .header {
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--line);
+    }
+    .logo-ring {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      background: radial-gradient(circle at 38% 32%, rgba(200,160,80,0.12), transparent 65%);
+    }
+    .logo-ring span {
+      font-family: 'Cormorant', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--gold);
+    }
+    .header-eyebrow {
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.6rem;
+    }
+    .header-title {
+      font-family: 'Cormorant', serif;
+      font-size: 2.4rem;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+    .header-title em { color: var(--sage); font-style: italic; }
+    .header-date {
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── Intro ── */
+    .intro {
+      max-width: 480px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      text-align: center;
+      font-family: 'Cormorant', serif;
+      font-size: 1.1rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    /* ── Farm cards ── */
+    .farms {
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .farm-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.4rem 1.5rem;
+    }
+
+    .farm-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .farm-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--sage-l);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .farm-name {
+      font-family: 'Cormorant', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+    .farm-location {
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .farm-certs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+    .cert {
+      font-size: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sage);
+      background: var(--sage-l);
+      border: 1px solid rgba(90,122,94,0.2);
+      border-radius: 99px;
+      padding: 0.25rem 0.6rem;
+    }
+
+    .farm-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .farm-item {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.45rem 0;
+      border-top: 1px solid var(--line);
+      font-size: 0.72rem;
+    }
+    .farm-item:first-child { border-top: none; }
+    .item-name { font-weight: 500; }
+    .item-lot {
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-family: monospace;
+      flex-shrink: 0;
+    }
+
+    .farm-distance {
+      margin-top: 1rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.58rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+    .distance-bar {
+      flex: 1;
+      height: 2px;
+      background: var(--line);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .distance-fill {
+      height: 100%;
+      background: var(--sage);
+      border-radius: 99px;
+      opacity: 0.5;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding: 2rem 1.5rem 3rem;
+      border-top: 1px solid var(--line);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .footer p {
+      font-family: 'Cormorant', serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .footer-sig {
+      font-size: 0.5rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo-ring"><span>O</span></div>
+    <div class="header-eyebrow">Fully traceable sourcing</div>
+    <h1 class="header-title">Casa <em>Origen</em></h1>
+    <div class="header-date" id="today-date"></div>
+  </div>
+
+  <p class="intro">
+    Every ingredient on today's menu came from a farm we know by name.
+    Here's exactly where your food came from today.
+  </p>
+
+  <div class="farms" id="farms-container"></div>
+
+  <div class="footer">
+    <p>"We believe food should be able to tell you its story — where it grew,
+    who tended it, and how it traveled to your plate."</p>
+    <div class="footer-sig">937 Central Ave · St. Petersburg, FL · Edge District</div>
+  </div>
+
+  <script>
+    // ── Synthetic data — today's sourcing ─────────────────────────────────────
+    // In production this is generated server-side from MarginEdge invoice data
+    // tagged with lot context and linked to today's menu.
+
+    const TODAY_SOURCES = [
+      {
+        name: "Worden Farm",
+        location: "Punta Gorda, FL",
+        distance: 85,
+        emoji: "🌿",
+        certs: ["USDA Organic", "Certified Naturally Grown"],
+        items: [
+          { name: "Mixed Greens",   lot: "WF-MG-0518" },
+          { name: "Arugula",        lot: "WF-AR-0518" },
+          { name: "Kale",           lot: "WF-KL-0518" },
+          { name: "Fresh Herbs",    lot: "WF-HB-0518" },
+        ]
+      },
+      {
+        name: "SunCoast Pastures",
+        location: "Myakka City, FL",
+        distance: 58,
+        emoji: "🐄",
+        certs: ["AGA Grassfed", "Certified Humane"],
+        items: [
+          { name: "Grass-fed Ground Beef",  lot: "SC-GB-0520" },
+          { name: "Grass-fed Beef Tallow",  lot: "SC-BT-0520" },
+          { name: "Pastured Chicken",       lot: "SC-PC-0520" },
+        ]
+      },
+      {
+        name: "Gamble Creek Farm",
+        location: "Parrish, FL",
+        distance: 42,
+        emoji: "🥚",
+        certs: ["USDA Organic"],
+        items: [
+          { name: "Free-range Eggs",    lot: "GC-EG-0519" },
+          { name: "Sweet Potatoes",     lot: "GC-SP-0519" },
+        ]
+      },
+      {
+        name: "Roser Community Farm",
+        location: "Anna Maria Island, FL",
+        distance: 65,
+        emoji: "🍋",
+        certs: ["Naturally Grown"],
+        items: [
+          { name: "Citrus",        lot: "RF-CT-0517" },
+          { name: "Avocados",      lot: "RF-AV-0517" },
+          { name: "Microgreens",   lot: "RF-MG-0521" },
+        ]
+      },
+      {
+        name: "Sweetwater Organic",
+        location: "Tampa, FL",
+        distance: 22,
+        emoji: "☀️",
+        certs: ["USDA Organic"],
+        items: [
+          { name: "Heirloom Tomatoes",  lot: "SW-TM-0520" },
+          { name: "Cucumbers",          lot: "SW-CU-0520" },
+        ]
+      },
+    ];
+
+    const MAX_DISTANCE = 120;
+
+    function renderDate() {
+      const d = new Date();
+      document.getElementById('today-date').textContent =
+        d.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
+    }
+
+    function renderFarms() {
+      const container = document.getElementById('farms-container');
+      for (const farm of TODAY_SOURCES) {
+        const pct = Math.min(100, Math.round((farm.distance / MAX_DISTANCE) * 100));
+        const card = document.createElement('div');
+        card.className = 'farm-card';
+        card.innerHTML = `
+          <div class="farm-header">
+            <div class="farm-badge">${farm.emoji}</div>
+            <div>
+              <div class="farm-name">${farm.name}</div>
+              <div class="farm-location">${farm.location}</div>
+            </div>
+          </div>
+          <div class="farm-certs">
+            ${farm.certs.map(c => `<span class="cert">${c}</span>`).join('')}
+          </div>
+          <div class="farm-items">
+            ${farm.items.map(item => `
+              <div class="farm-item">
+                <span class="item-name">${item.name}</span>
+                <span class="item-lot">Lot ${item.lot}</span>
+              </div>`).join('')}
+          </div>
+          <div class="farm-distance">
+            <span>${farm.distance} mi</span>
+            <div class="distance-bar">
+              <div class="distance-fill" style="width:${pct}%"></div>
+            </div>
+            <span>from St. Pete</span>
+          </div>`;
+        container.appendChild(card);
+      }
+    }
+
+    renderDate();
+    renderFarms();
+  </script>
+
+</body>
+</html>

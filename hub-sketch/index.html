@@ -84,6 +84,113 @@
   .farm-name{font-size:1.2rem}
   .farm-lots li{font-size:11px}
 }
+
+/* ── Shared tab layout ── */
+.tab-header{margin-bottom:22px}
+.tab-header h2{font-family:Cormorant,serif;font-size:42px;font-weight:300;line-height:1;margin-bottom:6px}
+.tab-header h2 em{color:var(--sage)}
+.tab-header p{color:var(--muted);font-size:14px;line-height:1.6}
+.tab-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}
+.tab-two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.card-title{font-family:Cormorant,serif;font-size:28px;font-weight:300;margin-bottom:14px}
+
+/* ── Sales tab ── */
+.day-table{width:100%;border-collapse:collapse;font-size:13px}
+.day-table th{text-align:left;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:0 12px 10px 0;border-bottom:1px solid var(--line)}
+.day-table td{padding:11px 12px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.day-table tr:last-child td{border-bottom:none}
+.day-flag{font-size:10px;color:var(--danger);margin-top:3px;font-weight:600}
+.cat-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:12px}
+.cat-label{width:130px;flex-shrink:0;color:var(--muted)}
+.cat-track{flex:1;height:7px;background:var(--line);border-radius:99px;overflow:hidden}
+.cat-fill{height:100%;border-radius:99px;background:var(--sage);opacity:.65}
+.cat-val{width:48px;text-align:right;flex-shrink:0;font-weight:600;font-size:11px}
+.pay-split{display:flex;gap:0;height:10px;border-radius:99px;overflow:hidden;margin:10px 0 6px}
+.pay-card{background:var(--sage);opacity:.7}
+.pay-cash{background:var(--amber);opacity:.7}
+.pay-legend{display:flex;gap:16px;font-size:11px;color:var(--muted)}
+.pay-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px;vertical-align:middle}
+
+/* ── Food cost tab ── */
+.alert-callout{padding:14px 16px;border-radius:12px;background:#f3e2d7;margin-bottom:16px}
+.alert-callout-head{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8b4d35;margin-bottom:6px}
+.alert-callout-row{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-top:1px solid rgba(139,77,53,.1)}
+.cost-table{width:100%;border-collapse:collapse;font-size:13px}
+.cost-table th{text-align:left;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:0 0 10px;border-bottom:1px solid var(--line)}
+.cost-table td{padding:10px 0;border-bottom:1px solid var(--line);vertical-align:middle}
+.cost-table tr:last-child td{border-bottom:none}
+.fc-bar{height:4px;background:var(--line);border-radius:99px;width:70px;margin-top:4px;overflow:hidden}
+.fc-fill{height:100%;border-radius:99px;background:var(--amber)}
+
+/* ── Invoices tab ── */
+.inv-list{display:flex;flex-direction:column;gap:12px}
+.inv-card{background:rgba(255,253,248,.78);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+.inv-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:4px}
+.inv-vendor{font-family:Cormorant,serif;font-size:1.25rem;font-weight:400}
+.inv-num{font-size:10px;color:var(--muted);margin-top:1px}
+.inv-right{text-align:right;flex-shrink:0}
+.inv-amount{font-size:1.1rem;font-weight:700}
+.inv-badge{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;padding:4px 9px;margin-top:4px}
+.inv-paid{background:#e2efe4;color:#4f7857}
+.inv-pending{background:#f3e2d7;color:#8b4d35}
+.inv-meta{font-size:11px;color:var(--muted);margin-bottom:10px;display:flex;gap:16px}
+.inv-format{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--sky);color:var(--muted);border-radius:4px;padding:2px 6px}
+.inv-lines{border-top:1px solid var(--line);padding-top:10px}
+.inv-line{display:flex;justify-content:space-between;font-size:12px;padding:4px 0;color:var(--muted)}
+.inv-line b{color:var(--ink);font-weight:600}
+.inv-lot{font-size:9px;font-family:monospace;letter-spacing:.08em;color:var(--sage);margin-left:6px}
+.inv-alert{margin-top:10px;padding:9px 12px;background:#f3e2d7;border-radius:8px;font-size:11px;color:#8b4d35;font-weight:600}
+
+/* ── Menu tab ── */
+.menu-eng{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+.eng-card{border-radius:12px;padding:14px 16px}
+.eng-card h4{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.eng-card ul{list-style:none;font-size:12px;line-height:1.9;color:var(--muted)}
+.eng-star{background:#e8f0e2;border:1px solid rgba(90,130,90,.2)}.eng-star h4{color:#4a7a50}
+.eng-promote{background:#eef3f0;border:1px solid rgba(80,120,100,.15)}.eng-promote h4{color:#3a6a58}
+.eng-puzzle{background:#f5f0e8;border:1px solid rgba(160,130,60,.2)}.eng-puzzle h4{color:#8a6a28}
+.eng-watch{background:#f8f0f0;border:1px solid rgba(160,80,80,.15)}.eng-watch h4{color:#904848}
+.menu-table{width:100%;border-collapse:collapse;font-size:13px}
+.menu-table th{text-align:left;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:0 0 10px;border-bottom:1px solid var(--line)}
+.menu-table td{padding:10px 0;border-bottom:1px solid var(--line);vertical-align:middle}
+.menu-table tr:last-child td{border-bottom:none}
+.menu-cat{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+
+/* ── Staff tab ── */
+.staff-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}
+.staff-day{border-radius:12px;padding:16px 14px;text-align:center;background:rgba(255,253,248,.78);border:1px solid var(--line)}
+.staff-day-name{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.staff-day-pct{font-family:Cormorant,serif;font-size:2.2rem;font-weight:300;line-height:1}
+.staff-day-covers{font-size:10px;color:var(--muted);margin-top:4px}
+.staff-day.high .staff-day-pct{color:var(--danger)}
+.staff-day.good .staff-day-pct{color:var(--ok)}
+
+/* ── Automations tab ── */
+.auto-list{display:flex;flex-direction:column;gap:10px}
+.auto-row{background:rgba(255,253,248,.78);border:1px solid var(--line);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:14px}
+.auto-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.auto-icon.ok{background:#e2efe4}
+.auto-icon.warn{background:#f3e2d7}
+.auto-icon.idle{background:var(--sky)}
+.auto-icon.sched{background:#eef3f0}
+.auto-body{flex:1}
+.auto-name{font-weight:700;font-size:13px;margin-bottom:2px}
+.auto-desc{font-size:12px;color:var(--muted)}
+.auto-status{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;flex-shrink:0}
+.auto-status.ok{color:var(--ok)}
+.auto-status.warn{color:var(--danger)}
+.auto-status.idle{color:var(--muted)}
+.auto-status.sched{color:var(--amber)}
+
+/* ── Responsive additions ── */
+@media(max-width:640px){
+  .tab-summary{grid-template-columns:1fr}
+  .tab-two{grid-template-columns:1fr}
+  .menu-eng{grid-template-columns:1fr 1fr}
+  .staff-grid{grid-template-columns:1fr 1fr}
+  .day-table{font-size:12px}
+  .cost-table{font-size:12px}
+}
 </style></head>
 <body><div class="topbar"><span class="dot on"></span><span class="pill">Toast synced</span><span class="dot"></span><span class="pill">QBO read-only</span><div class="app"><button class="pill">Open POS</button><button class="pill">Run Close</button><button class="pill">Settings</button></div></div>
 <header><div class="header-inner"><div><div class="eyebrow">Restaurant Operations Hub</div><h1 class="title">Casa <em>Origen</em></h1></div><p class="sub">A calm back-office cockpit for sales, labor, food cost, banking, invoices, and the daily decisions that keep a restaurant healthy.</p></div></header>
@@ -94,7 +201,239 @@
 <div id="tab-traceability">
 <div class="trace-intro"><div class="eyebrow" style="margin-bottom:10px">Lot-level sourcing</div><h2>Today's <em>farms</em></h2><p>Every ingredient traced to its farm, lot number, and delivery date.</p></div>
 <div class="trace-grid" id="trace-grid"><div class="card" style="grid-column:1/-1;text-align:center;padding:48px;color:var(--muted)">Loading sourcing data…</div></div>
-</div></main><div class="toast" id="toast">Done</div>
+</div>
+
+<!-- ── SALES TAB ── -->
+<div id="tab-sales" style="display:none">
+<div class="tab-header"><h2>Weekly <em>sales</em></h2><p>Mon May 18 – Fri May 22, 2026 · Toast POS sync</p></div>
+<div class="tab-summary">
+  <div class="card metric"><label>Week gross</label><b>$10,121</b><span>479 covers</span></div>
+  <div class="card metric"><label>Avg check</label><b>$21.13</b><span>↑ from $19.80 prior week</span></div>
+  <div class="card metric"><label>Best day</label><b>Friday</b><span>$2,490 · 118 covers</span></div>
+</div>
+<div class="tab-two">
+  <div class="card">
+    <div class="card-title">Day by day</div>
+    <table class="day-table">
+      <thead><tr><th>Day</th><th>Gross</th><th>Covers</th><th>Avg</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Monday</td><td><b>$1,843</b></td><td>87</td><td>$21.18</td><td><span style="color:var(--ok);font-size:11px">Clean</span></td></tr>
+        <tr><td>Tuesday</td><td><b>$1,988</b></td><td>94</td><td>$21.15</td><td><div class="day-flag">Void $16 — kitchen duplicate</div></td></tr>
+        <tr><td>Wednesday</td><td><b>$1,644</b></td><td>78</td><td>$21.08</td><td><div class="day-flag">Comp $32 (staff meal) · Discount $40 (partner)</div></td></tr>
+        <tr><td>Thursday</td><td><b>$2,156</b></td><td>102</td><td>$21.14</td><td><span style="color:var(--ok);font-size:11px">Clean</span></td></tr>
+        <tr><td>Friday</td><td><b>$2,490</b></td><td>118</td><td>$21.10</td><td><div class="day-flag">Deposit short $16 · Comp $16 (influencer)</div></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <div class="card-title">By category</div>
+    <div style="margin-bottom:20px">
+      <div class="cat-bar-row"><span class="cat-label">Lunch bowls</span><div class="cat-track"><div class="cat-fill" style="width:54%"></div></div><span class="cat-val">$5,577</span></div>
+      <div class="cat-bar-row"><span class="cat-label">Breakfast bowls</span><div class="cat-track"><div class="cat-fill" style="width:36%"></div></div><span class="cat-val">$3,382</span></div>
+      <div class="cat-bar-row"><span class="cat-label">Coffee & drinks</span><div class="cat-track"><div class="cat-fill" style="width:16%"></div></div><span class="cat-val">$1,560</span></div>
+      <div class="cat-bar-row"><span class="cat-label">Retail</span><div class="cat-track"><div class="cat-fill" style="width:6%"></div></div><span class="cat-val">$602</span></div>
+    </div>
+    <div class="card-title" style="font-size:22px">Payment mix</div>
+    <div class="pay-split">
+      <div class="pay-card" style="width:87%"></div>
+      <div class="pay-cash" style="width:13%"></div>
+    </div>
+    <div class="pay-legend">
+      <span><span class="pay-dot" style="background:var(--sage);opacity:.7"></span>Card $8,801 (87%)</span>
+      <span><span class="pay-dot" style="background:var(--amber);opacity:.7"></span>Cash $1,320 (13%)</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ── FOOD COST TAB ── -->
+<div id="tab-foodcost" style="display:none">
+<div class="tab-header"><h2>Food <em>cost</em></h2><p>Invoice spend vs sales · week of May 18–22</p></div>
+<div class="tab-summary">
+  <div class="card metric"><label>Invoiced this week</label><b>$1,523</b><span>15.0% of gross sales</span></div>
+  <div class="card metric"><label>Menu cost target</label><b>~27%</b><span>weighted avg food cost</span></div>
+  <div class="card metric"><label>Price alerts</label><b>2</b><span>beef +11.5% · honey +8.4%</span></div>
+</div>
+<div class="alert-callout">
+  <div class="alert-callout-head">Active price alerts — action needed</div>
+  <div class="alert-callout-row"><span>🥩 SunCoast Pastures — Grass-fed ground beef</span><span><b>+11.5%</b> ($13.00 → $14.50/lb)</span></div>
+  <div class="alert-callout-row"><span style="color:var(--muted);font-size:12px;padding-left:0">Affects: Grassfed Beef Bowl. Food cost rises from 30% → 33.2% at current price. Consider $1 price increase or portion review.</span><span></span></div>
+  <div class="alert-callout-row" style="margin-top:6px"><span>🍯 Sarasota Honey Co. — Raw wildflower honey</span><span><b>+8.4%</b> ($0.48 → $0.52/oz)</span></div>
+  <div class="alert-callout-row"><span style="color:var(--muted);font-size:12px">Affects: Honey Latte, Green Farm Scramble, Citrus Granola Bowl. Margin impact is small — absorb or watch.</span><span></span></div>
+</div>
+<div class="card">
+  <div class="card-title">Menu item food cost</div>
+  <table class="cost-table">
+    <thead><tr><th>Item</th><th>Price</th><th>FC target</th><th>Margin</th><th style="width:80px">Cost bar</th></tr></thead>
+    <tbody>
+      <tr><td><b>Grassfed Beef Bowl</b> <span class="menu-cat">lunch bowl</span></td><td>$18</td><td>30%</td><td>70%</td><td><div class="fc-bar"><div class="fc-fill" style="width:30%"></div></div></td></tr>
+      <tr><td><b>Harvest Chicken Bowl</b> <span class="menu-cat">lunch bowl</span></td><td>$17</td><td>29%</td><td>71%</td><td><div class="fc-bar"><div class="fc-fill" style="width:29%"></div></div></td></tr>
+      <tr><td><b>The Origen Bowl</b> <span class="menu-cat">breakfast bowl</span></td><td>$16</td><td>28%</td><td>72%</td><td><div class="fc-bar"><div class="fc-fill" style="width:28%"></div></div></td></tr>
+      <tr><td><b>Green Farm Scramble</b> <span class="menu-cat">breakfast bowl</span></td><td>$14</td><td>26%</td><td>74%</td><td><div class="fc-bar"><div class="fc-fill" style="width:26%"></div></div></td></tr>
+      <tr><td><b>Farm Greens Salad</b> <span class="menu-cat">lunch bowl</span></td><td>$14</td><td>24%</td><td>76%</td><td><div class="fc-bar"><div class="fc-fill" style="width:24%"></div></div></td></tr>
+      <tr><td><b>Citrus &amp; Honey Granola Bowl</b> <span class="menu-cat">breakfast bowl</span></td><td>$12</td><td>22%</td><td>78%</td><td><div class="fc-bar"><div class="fc-fill" style="width:22%"></div></div></td></tr>
+      <tr><td><b>Honey Latte</b> <span class="menu-cat">coffee</span></td><td>$6.50</td><td>14%</td><td>86%</td><td><div class="fc-bar"><div class="fc-fill" style="width:14%"></div></div></td></tr>
+      <tr><td><b>Espresso</b> <span class="menu-cat">coffee</span></td><td>$4.50</td><td>10%</td><td>90%</td><td><div class="fc-bar"><div class="fc-fill" style="width:10%"></div></div></td></tr>
+      <tr><td><b>Drip Coffee</b> <span class="menu-cat">coffee</span></td><td>$4.00</td><td>12%</td><td>88%</td><td><div class="fc-bar"><div class="fc-fill" style="width:12%"></div></div></td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- ── INVOICES TAB ── -->
+<div id="tab-invoices" style="display:none">
+<div class="tab-header"><h2>Vendor <em>invoices</em></h2><p>6 invoices · May 18–22 · $1,054.50 paid · $468.00 pending</p></div>
+<div class="tab-summary">
+  <div class="card metric"><label>Total invoiced</label><b>$1,523</b><span>6 invoices this week</span></div>
+  <div class="card metric"><label>Paid</label><b>$1,055</b><span style="color:var(--ok)">4 invoices cleared</span></div>
+  <div class="card metric"><label>Pending</label><b>$468</b><span style="color:var(--danger)">2 invoices due</span></div>
+</div>
+<div class="inv-list">
+  <div class="inv-card">
+    <div class="inv-head"><div><div class="inv-vendor">Worden Farm</div><div class="inv-num">WF-2026-089 · May 18</div></div><div class="inv-right"><div class="inv-amount">$284.50</div><div><span class="inv-badge inv-paid">Paid</span></div></div></div>
+    <div class="inv-meta"><span>📧 Email PDF</span><span>Punta Gorda, FL · 85 mi</span><span>Due May 25</span></div>
+    <div class="inv-lines">
+      <div class="inv-line"><span>Mixed Greens 5 lbs</span><span><b>$70.00</b><span class="inv-lot">WF-MG-0518</span></span></div>
+      <div class="inv-line"><span>Arugula 3 lbs</span><span><b>$48.00</b><span class="inv-lot">WF-AR-0518</span></span></div>
+      <div class="inv-line"><span>Kale 4 lbs</span><span><b>$48.00</b><span class="inv-lot">WF-KL-0518</span></span></div>
+      <div class="inv-line"><span>Mixed Peppers 6 lbs</span><span><b>$51.00</b><span class="inv-lot">WF-PP-0518</span></span></div>
+      <div class="inv-line"><span>Fresh Herbs 2 lbs</span><span><b>$36.00</b><span class="inv-lot">WF-HB-0518</span></span></div>
+      <div class="inv-line"><span>Seasonal Vegetables 5 lbs</span><span><b>$31.50</b><span class="inv-lot">WF-SV-0518</span></span></div>
+    </div>
+  </div>
+  <div class="inv-card">
+    <div class="inv-head"><div><div class="inv-vendor">Gamble Creek Farm</div><div class="inv-num">GCF-MAY-22 · May 19</div></div><div class="inv-right"><div class="inv-amount">$198.00</div><div><span class="inv-badge inv-paid">Paid</span></div></div></div>
+    <div class="inv-meta"><span>✍️ Handwritten slip</span><span>Parrish, FL · 42 mi</span><span>Cash on delivery</span></div>
+    <div class="inv-lines">
+      <div class="inv-line"><span>Pasture-raised eggs 10 dozen</span><span><b>$90.00</b><span class="inv-lot">GCF-EG-0519</span></span></div>
+      <div class="inv-line"><span>Sweet potatoes 20 lbs</span><span><b>$64.00</b><span class="inv-lot">GCF-SP-0519</span></span></div>
+      <div class="inv-line"><span>Butternut squash 12 lbs</span><span><b>$44.00</b><span class="inv-lot">GCF-SQ-0519</span></span></div>
+    </div>
+  </div>
+  <div class="inv-card">
+    <div class="inv-head"><div><div class="inv-vendor">SunCoast Pastures</div><div class="inv-num">SCP-2026-041 · May 19</div></div><div class="inv-right"><div class="inv-amount">$487.50</div><div><span class="inv-badge inv-paid">Paid</span></div></div></div>
+    <div class="inv-meta"><span>🟥 Square invoice</span><span>Myakka City, FL · 58 mi</span><span>Due May 26</span></div>
+    <div class="inv-lines">
+      <div class="inv-line"><span>Grass-fed ground beef 15 lbs</span><span><b>$217.50</b><span class="inv-lot">SCP-GB-0519</span></span></div>
+      <div class="inv-line"><span>Pastured chicken breast 18 lbs</span><span><b>$207.00</b><span class="inv-lot">SCP-CB-0519</span></span></div>
+      <div class="inv-line"><span>Grass-fed beef tallow 5 lbs</span><span><b>$63.00</b><span class="inv-lot">SCP-TL-0519</span></span></div>
+    </div>
+    <div class="inv-alert">⚠️ Ground beef up $1.50/lb (+11.5%) vs last week. Review Grassfed Beef Bowl pricing.</div>
+  </div>
+  <div class="inv-card" style="border-color:rgba(184,144,85,.3)">
+    <div class="inv-head"><div><div class="inv-vendor">Roser Community Farm</div><div class="inv-num">RCF-0522 · May 20</div></div><div class="inv-right"><div class="inv-amount">$156.00</div><div><span class="inv-badge inv-pending">Pending</span></div></div></div>
+    <div class="inv-meta"><span>📧 Email PDF</span><span>Anna Maria Island, FL · 65 mi</span><span>Due May 27</span></div>
+    <div class="inv-lines">
+      <div class="inv-line"><span>Hass avocados 2 cases (48 ea)</span><span><b>$84.00</b><span class="inv-lot">RCF-AV-0520</span></span></div>
+      <div class="inv-line"><span>Valencia oranges 10 lbs</span><span><b>$32.00</b><span class="inv-lot">RCF-CT-0520</span></span></div>
+      <div class="inv-line"><span>Microgreens 1 lb</span><span><b>$40.00</b><span class="inv-lot">RCF-MG-0520</span></span></div>
+    </div>
+  </div>
+  <div class="inv-card" style="border-color:rgba(184,144,85,.3)">
+    <div class="inv-head"><div><div class="inv-vendor">Foundation Coffee Roasters</div><div class="inv-num">FCR-2026-118 · May 20</div></div><div class="inv-right"><div class="inv-amount">$312.00</div><div><span class="inv-badge inv-pending">Pending</span></div></div></div>
+    <div class="inv-meta"><span>📧 Email PDF</span><span>St. Petersburg, FL · 3 mi</span><span>Due Jun 3 · Net 14</span></div>
+    <div class="inv-lines">
+      <div class="inv-line"><span>House blend beans 10 lbs (service)</span><span><b>$180.00</b><span class="inv-lot">FCR-HB-0520</span></span></div>
+      <div class="inv-line"><span>Retail bags 250g — 12 units</span><span><b>$132.00</b><span class="inv-lot">FCR-RB-0520</span></span></div>
+    </div>
+  </div>
+  <div class="inv-card">
+    <div class="inv-head"><div><div class="inv-vendor">Sarasota Honey Company</div><div class="inv-num">SHC-TEXT-051 · May 21</div></div><div class="inv-right"><div class="inv-amount">$85.00</div><div><span class="inv-badge inv-paid">Paid</span></div></div></div>
+    <div class="inv-meta"><span>💬 Text message</span><span>Sarasota, FL · 55 mi</span><span>Cash on pickup</span></div>
+    <div class="inv-lines">
+      <div class="inv-line"><span>Raw wildflower honey 5 lbs</span><span><b>$70.00</b><span class="inv-lot">SHC-WH-0521</span></span></div>
+      <div class="inv-line"><span>Retail honey jars 300g — 3 units</span><span><b>$15.00</b><span class="inv-lot">SHC-RJ-0521</span></span></div>
+    </div>
+    <div class="inv-alert">⚠️ Honey up 8.4% vs last delivery. Affects Honey Latte and Granola Bowl.</div>
+  </div>
+</div>
+</div>
+
+<!-- ── MENU TAB ── -->
+<div id="tab-menu" style="display:none">
+<div class="tab-header"><h2>Menu <em>engineering</em></h2><p>All items ranked by margin × volume · week of May 18–22</p></div>
+<div class="menu-eng">
+  <div class="eng-card eng-star"><h4>⭐ Stars — keep &amp; promote</h4><ul><li>Grassfed Beef Bowl</li><li>Harvest Chicken Bowl</li><li>Honey Latte</li></ul></div>
+  <div class="eng-card eng-promote"><h4>💛 Promote — hidden gems</h4><ul><li>The Origen Bowl</li><li>Green Farm Scramble</li></ul></div>
+  <div class="eng-card eng-puzzle"><h4>🧩 Puzzle — great margin, low volume</h4><ul><li>Farm Greens Salad</li><li>Espresso</li></ul></div>
+  <div class="eng-card eng-watch"><h4>👁 Watch — review positioning</h4><ul><li>Citrus Granola Bowl</li><li>Drip Coffee</li></ul></div>
+</div>
+<div class="card">
+  <div class="card-title">Full menu</div>
+  <table class="menu-table">
+    <thead><tr><th>Item</th><th>Price</th><th>FC target</th><th>Margin</th><th>Week sales rank</th></tr></thead>
+    <tbody>
+      <tr><td><b>Grassfed Beef Bowl</b><div class="menu-cat">lunch bowl · AGA grassfed beef, arugula, sweet potato</div></td><td>$18</td><td>30%</td><td>70%</td><td>#1</td></tr>
+      <tr><td><b>The Origen Bowl</b><div class="menu-cat">breakfast bowl · pastured eggs, seasonal veg, sweet potato hash</div></td><td>$16</td><td>28%</td><td>72%</td><td>#2</td></tr>
+      <tr><td><b>Harvest Chicken Bowl</b><div class="menu-cat">lunch bowl · pastured chicken, squash, kale, avocado</div></td><td>$17</td><td>29%</td><td>71%</td><td>#3</td></tr>
+      <tr><td><b>Honey Latte</b><div class="menu-cat">coffee · Foundation espresso, raw wildflower honey</div></td><td>$6.50</td><td>14%</td><td>86%</td><td>#4</td></tr>
+      <tr><td><b>Green Farm Scramble</b><div class="menu-cat">breakfast bowl · 3 eggs, Worden Farm greens, avocado, honey</div></td><td>$14</td><td>26%</td><td>74%</td><td>#5</td></tr>
+      <tr><td><b>Farm Greens Salad</b><div class="menu-cat">lunch bowl · mixed greens, microgreens, avocado</div></td><td>$14</td><td>24%</td><td>76%</td><td>#6</td></tr>
+      <tr><td><b>Espresso</b><div class="menu-cat">coffee · Foundation direct trade, Colombian single origin</div></td><td>$4.50</td><td>10%</td><td>90%</td><td>#7</td></tr>
+      <tr><td><b>Citrus &amp; Honey Granola Bowl</b><div class="menu-cat">breakfast bowl · grain-free granola, coconut yogurt, citrus, honey</div></td><td>$12</td><td>22%</td><td>78%</td><td>#8</td></tr>
+      <tr><td><b>Drip Coffee</b><div class="menu-cat">coffee · house blend, Colombian single origin rotation</div></td><td>$4.00</td><td>12%</td><td>88%</td><td>#9</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- ── STAFF TAB ── -->
+<div id="tab-staff" style="display:none">
+<div class="tab-header"><h2>Labor &amp; <em>staff</em></h2><p>Week of May 18–22 · Gusto payroll · Toast timeclock</p></div>
+<div class="tab-summary">
+  <div class="card metric"><label>Week labor cost</label><b>$2,232</b><span>22.1% of gross sales</span></div>
+  <div class="card metric"><label>Target labor %</label><b>22%</b><span>within range this week</span></div>
+  <div class="card metric"><label>Best day</label><b>Friday</b><span>19.4% · busiest, most efficient</span></div>
+</div>
+<div class="staff-grid">
+  <div class="staff-day good"><div class="staff-day-name">Mon</div><div class="staff-day-pct">19.8%</div><div class="staff-day-covers">87 covers</div></div>
+  <div class="staff-day"><div class="staff-day-name">Tue</div><div class="staff-day-pct">21.2%</div><div class="staff-day-covers">94 covers</div></div>
+  <div class="staff-day high"><div class="staff-day-name">Wed</div><div class="staff-day-pct">24.5%</div><div class="staff-day-covers">78 covers · slow day</div></div>
+  <div class="staff-day"><div class="staff-day-name">Thu</div><div class="staff-day-pct">22.1%</div><div class="staff-day-covers">102 covers</div></div>
+  <div class="staff-day good"><div class="staff-day-name">Fri</div><div class="staff-day-pct">19.4%</div><div class="staff-day-covers">118 covers</div></div>
+</div>
+<div class="tab-two">
+  <div class="card">
+    <div class="card-title">Week notes</div>
+    <ul class="list">
+      <li><span>Wednesday staff meal (comp)</span><b>$32</b></li>
+      <li><span>Wednesday community discount</span><b>$40</b></li>
+      <li><span>Friday influencer comp (owner-approved)</span><b>$16</b></li>
+      <li><span>Tuesday kitchen void (duplicate)</span><b>$16</b></li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-title">Payroll status</div>
+    <ul class="list">
+      <li><span>Gusto sync</span><b style="color:var(--ok)">Connected</b></li>
+      <li><span>Toast timeclock export</span><b style="color:var(--ok)">Auto</b></li>
+      <li><span>Next payroll run</span><b>May 30</b></li>
+      <li><span>Benefits enrollment</span><b>Current</b></li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<!-- ── AUTOMATIONS TAB ── -->
+<div id="tab-automations" style="display:none">
+<div class="tab-header"><h2>Automation <em>queue</em></h2><p>What's running, what's next, what needs attention</p></div>
+<div class="tab-summary">
+  <div class="card metric"><label>Ran this week</label><b>5</b><span>automations completed</span></div>
+  <div class="card metric"><label>Pending</label><b>2</b><span>invoice imports queued</span></div>
+  <div class="card metric"><label>Scheduled</label><b>3</b><span>running on schedule</span></div>
+</div>
+<div class="auto-list">
+  <div class="auto-row"><div class="auto-icon ok">📋</div><div class="auto-body"><div class="auto-name">Daily close note</div><div class="auto-desc">Runs each night after POS sync. Generates summary, flags variances, price alerts, and deposit status. Last ran: Friday May 22 at 11:52 PM.</div></div><div class="auto-status ok">Complete</div></div>
+  <div class="auto-row"><div class="auto-icon warn">📥</div><div class="auto-body"><div class="auto-name">Invoice import</div><div class="auto-desc">Scans email and connected accounts for vendor invoices. 2 invoices pending (Roser Farm · Foundation Coffee). Awaiting scan confirmation before QBO post.</div></div><div class="auto-status warn">2 Pending</div></div>
+  <div class="auto-row"><div class="auto-icon ok">⚠️</div><div class="auto-body"><div class="auto-name">Price alert — SunCoast Pastures</div><div class="auto-desc">Ground beef flagged at +11.5% on May 19 invoice scan. Affected items: Grassfed Beef Bowl. Margin impact calculated and surfaced in Food Cost tab.</div></div><div class="auto-status warn">Action needed</div></div>
+  <div class="auto-row"><div class="auto-icon ok">🌿</div><div class="auto-body"><div class="auto-name">Traceability update</div><div class="auto-desc">Builds farm sourcing map from morning invoice data. Lot numbers tagged to dishes. Guest page updated. Last ran: Friday May 22 at 7:10 AM.</div></div><div class="auto-status ok">Live</div></div>
+  <div class="auto-row"><div class="auto-icon idle">📊</div><div class="auto-body"><div class="auto-name">QBO posting</div><div class="auto-desc">Reads QuickBooks Online to reconcile POS and bank totals. Currently in read-only mode — write access pending client authorization.</div></div><div class="auto-status idle">Read-only</div></div>
+  <div class="auto-row"><div class="auto-icon sched">📅</div><div class="auto-body"><div class="auto-name">Weekly menu engineering report</div><div class="auto-desc">Ranks all menu items by margin × volume. Flags stars, puzzles, and items to watch. Runs every Sunday at 6 AM before the week begins.</div></div><div class="auto-status sched">Sunday 6AM</div></div>
+  <div class="auto-row"><div class="auto-icon sched">🏦</div><div class="auto-body"><div class="auto-name">Deposit reconciliation</div><div class="auto-desc">Compares expected vs actual cash deposits each night. Flags variances above $5. This week: Friday flagged at -$16. All other days clean.</div></div><div class="auto-status ok">Running</div></div>
+</div>
+</div>
+
+</main><div class="toast" id="toast">Done</div>
 <script>
 const API_BASE = 'http://localhost:8765';
 
@@ -179,15 +518,26 @@ async function loadDashboard() {
 loadDashboard();
 
 // ── Tab switching
-const tabToday = document.getElementById('tab-today');
-const tabTrace = document.getElementById('tab-traceability');
+const tabMap = {
+  'today':         'tab-today',
+  'sales':         'tab-sales',
+  'food cost':     'tab-foodcost',
+  'invoices':      'tab-invoices',
+  'menu':          'tab-menu',
+  'staff':         'tab-staff',
+  'automations':   'tab-automations',
+  'traceability':  'tab-traceability',
+};
 document.querySelectorAll('.nav button').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const label = btn.textContent.trim().toLowerCase();
-    tabToday.style.display = label === 'today' ? '' : 'none';
-    tabTrace.style.display = label === 'traceability' ? '' : 'none';
+    Object.entries(tabMap).forEach(([key, id]) => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = key === label ? '' : 'none';
+    });
+    if (label === 'traceability') loadTrace();
   });
 });
 

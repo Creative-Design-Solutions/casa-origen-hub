@@ -27,6 +27,63 @@
 .dist-fill{height:100%;background:var(--sage);border-radius:99px;opacity:.5}
 @media(max-width:900px){.trace-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.trace-grid{grid-template-columns:1fr}}
+
+/* ── Mobile (phone) ── */
+@media(max-width:640px){
+  /* topbar — hide desktop app buttons */
+  .app{display:none}
+  .topbar{gap:6px;padding:0 14px}
+
+  /* header — compact */
+  header{padding:22px 18px 18px}
+  .header-inner{flex-direction:column;align-items:flex-start;gap:6px}
+  .title{font-size:42px}
+  .sub{max-width:100%;font-size:13px;margin-top:4px}
+
+  /* nav — tighten padding */
+  .nav{padding:8px 14px}
+
+  /* main — reduce outer padding */
+  main{padding:16px 12px 40px}
+
+  /* cards — tighter padding */
+  .card{padding:16px;border-radius:14px}
+
+  /* brief + alerts headings */
+  .brief h2,.alerts h2{font-size:26px}
+  .brief p{font-size:13px}
+
+  /* daily metrics: stack to 1 column */
+  .daily{grid-template-columns:1fr;gap:10px;margin-top:14px}
+  .metric b{font-size:26px;margin-top:4px}
+  .metric span{font-size:11px}
+
+  /* action buttons: full width stacked */
+  .actions{flex-direction:column;gap:8px;margin-top:16px}
+  .primary,.secondary{width:100%;text-align:center;padding:13px}
+
+  /* alerts list */
+  .alerts li{padding:10px 0;font-size:13px}
+  .alerts li small{font-size:11px}
+
+  /* streams: 1 column on phone */
+  .streams{grid-template-columns:1fr;gap:10px;margin-top:14px}
+  .stream{min-height:auto}
+  .stream h3{font-size:16px;margin:6px 0 5px}
+  .stream p{font-size:12px}
+  .stream .mini{font-size:12px;margin-top:10px;padding-top:10px}
+
+  /* bottom section: stack */
+  .section{grid-template-columns:1fr;gap:10px;margin-top:14px}
+  .section h2{font-size:24px !important}
+  .list li{font-size:12px;padding:10px 0}
+
+  /* traceability */
+  .trace-intro h2{font-size:32px}
+  .trace-intro p{font-size:13px}
+  .farm-name{font-size:1.2rem}
+  .farm-lots li{font-size:11px}
+}
 </style></head>
 <body><div class="topbar"><span class="dot on"></span><span class="pill">Toast synced</span><span class="dot"></span><span class="pill">QBO read-only</span><div class="app"><button class="pill">Open POS</button><button class="pill">Run Close</button><button class="pill">Settings</button></div></div>
 <header><div class="header-inner"><div><div class="eyebrow">Restaurant Operations Hub</div><h1 class="title">Casa <em>Origen</em></h1></div><p class="sub">A calm back-office cockpit for sales, labor, food cost, banking, invoices, and the daily decisions that keep a restaurant healthy.</p></div></header>

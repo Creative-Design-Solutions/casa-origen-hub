@@ -143,7 +143,7 @@
 .inv-alert{margin-top:10px;padding:9px 12px;background:#f3e2d7;border-radius:8px;font-size:11px;color:#8b4d35;font-weight:600}
 
 /* ── Menu tab ── */
-.menu-eng{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+.menu-eng{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px}
 .eng-card{border-radius:12px;padding:14px 16px}
 .eng-card h4{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
 .eng-card ul{list-style:none;font-size:12px;line-height:1.9;color:var(--muted)}
@@ -195,7 +195,7 @@
 </style></head>
 <body><div class="topbar"><span class="dot on"></span><span class="pill">Toast synced</span><span class="dot"></span><span class="pill">QBO read-only</span><button class="pill tbar-btn" onclick="toast('Opening POS...')">Open POS</button><button class="pill tbar-btn" onclick="toast('Generating close...')">Run Close</button><button class="pill gear-btn" onclick="toast('Settings')" title="Settings">⚙</button></div>
 <header><div class="header-inner"><div><div class="eyebrow">Restaurant Operations Hub</div><h1 class="title">Casa <em>Origen</em></h1></div><p class="sub">A calm back-office cockpit for sales, labor, food cost, banking, invoices, and the daily decisions that keep a restaurant healthy.</p></div></header>
-<nav class="nav"><div class="nav-inner"><button class="active">Today</button><button>Sales</button><button>Food Cost</button><button>Invoices</button><button>Menu</button><button>Staff</button><button>Automations</button><button>Traceability</button><div class="nav-status"><span><i></i>Live sync</span><span>Close pending</span></div></div></nav>
+<nav class="nav"><div class="nav-inner"><button class="active">Today</button><button>Sales</button><button>Food Cost</button><button>Invoices</button><button>Menu Flow</button><button>Staff</button><button>Automations</button><button>Traceability</button><div class="nav-status"><span><i></i>Live sync</span><span>Close pending</span></div></div></nav>
 <main><div id="tab-today"><section class="hero"><div class="card brief"><h2>Morning brief</h2><p>Friday close is clean except one cash variance and a honey price increase affecting two menu items. Lunch bowls remain the strongest margin story.</p><div class="daily"><div class="metric"><label>Gross sales</label><b>$2,490</b><span>+15.5% vs yesterday</span></div><div class="metric"><label>Covers</label><b>118</b><span>$21.10 avg check</span></div><div class="metric"><label>Attention</label><b>3</b><span>1 finance · 2 cost</span></div></div><div class="actions"><button class="primary" onclick="toast('Daily close generated')">Generate daily close</button><button class="secondary" onclick="toast('Menu costs opened')">Check menu costs</button><button class="secondary" onclick="toast('Opening invoices')">Import invoices</button></div></div><div class="card alerts"><h2>Needs eyes</h2><ul id="alerts"><li><span class="badge warn">Cash</span><div><b>$18 short deposit</b><br><small>Verify cash drawer note before posting.</small></div></li><li><span class="badge warn">COGS</span><div><b>Honey +8.4%</b><br><small>Affects Honey Latte and Granola Bowl.</small></div></li><li><span class="badge good">Clean</span><div><b>Sales sync complete</b><br><small>Square pulled 11:48 PM.</small></div></li></ul></div></section>
 <section class="streams"><div class="card stream"><label>Stream 01</label><h3>Sales</h3><p>POS totals, covers, top items, comps, voids, payment mix.</p><div class="mini"><span>Status</span><b>Synced</b></div></div><div class="card stream"><label>Stream 02</label><h3>Labor</h3><p>Schedule, payroll hours, labor percentage, shift notes.</p><div class="mini"><span>Labor %</span><b>23.8%</b></div></div><div class="card stream"><label>Stream 03</label><h3>Food cost</h3><p>Invoices, ingredient changes, menu margin pressure.</p><div class="mini"><span>Alerts</span><b>2</b></div></div><div class="card stream"><label>Stream 04</label><h3>Banking</h3><p>Deposits, card batches, cash reconciliation, transfers.</p><div class="mini"><span>Variance</span><b>-$18</b></div></div></section>
 <section class="section"><div class="card"><h2 style="font-family:Cormorant,serif;font-size:32px;font-weight:300">Top items</h2><ul class="list"><li><span>Grassfed Beef Bowl</span><b>$648</b></li><li><span>Harvest Chicken Bowl</span><b>$527</b></li><li><span>Honey Latte</span><b>$286</b></li><li><span>The Origen Bowl</span><b>$256</b></li></ul></div><div class="card"><h2 style="font-family:Cormorant,serif;font-size:32px;font-weight:300">Automation queue</h2><ul class="list"><li><span>Daily close note</span><b>Ready</b></li><li><span>Invoice import</span><b>2 pending</b></li><li><span>QBO posting</span><b>Read-only</b></li><li><span>Weekly menu report</span><b>Sunday</b></li></ul></div></section></div>
@@ -354,10 +354,9 @@
 <div id="tab-menu" style="display:none">
 <div class="tab-header"><h2>Menu <em>engineering</em></h2><p>All items ranked by margin × volume · week of May 18–22</p></div>
 <div class="menu-eng">
-  <div class="eng-card eng-star"><h4>⭐ Stars — keep &amp; promote</h4><ul><li>Grassfed Beef Bowl</li><li>Harvest Chicken Bowl</li><li>Honey Latte</li></ul></div>
-  <div class="eng-card eng-promote"><h4>💛 Promote — hidden gems</h4><ul><li>The Origen Bowl</li><li>Green Farm Scramble</li></ul></div>
-  <div class="eng-card eng-puzzle"><h4>🧩 Puzzle — great margin, low volume</h4><ul><li>Farm Greens Salad</li><li>Espresso</li></ul></div>
-  <div class="eng-card eng-watch"><h4>👁 Watch — review positioning</h4><ul><li>Citrus Granola Bowl</li><li>Drip Coffee</li></ul></div>
+  <div class="eng-card eng-star"><h4>Customer Picks</h4><div style="font-size:10px;color:var(--sage);margin-bottom:8px;font-style:italic">This season's favorites</div><ul><li>Grassfed Beef Bowl</li><li>Harvest Chicken Bowl</li><li>Honey Latte</li></ul></div>
+  <div class="eng-card eng-promote"><h4>What We Love</h4><div style="font-size:10px;color:#3a6a58;margin-bottom:8px;font-style:italic">Staff favorites</div><ul><li>The Origen Bowl</li><li>Green Farm Scramble</li></ul></div>
+  <div class="eng-card eng-puzzle"><h4>Creative Mystery</h4><div style="font-size:10px;color:#8a6a28;margin-bottom:8px;font-style:italic">Great margins · low volume</div><ul><li>Farm Greens Salad</li><li>Espresso</li><li>Citrus Granola Bowl</li><li>Drip Coffee</li></ul></div>
 </div>
 <div class="card">
   <div class="card-title">Full menu</div>
@@ -524,7 +523,7 @@ const tabMap = {
   'sales':         'tab-sales',
   'food cost':     'tab-foodcost',
   'invoices':      'tab-invoices',
-  'menu':          'tab-menu',
+  'menu flow':     'tab-menu',
   'staff':         'tab-staff',
   'automations':   'tab-automations',
   'traceability':  'tab-traceability',

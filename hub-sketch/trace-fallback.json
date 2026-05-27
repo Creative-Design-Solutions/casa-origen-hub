@@ -66,13 +66,13 @@
     ]
   },
   {
-    "name": "Rooftop Roasters",
-    "location": "Local, FL",
-    "distance": 4,
+    "name": "Bandit Coffee Co.",
+    "location": "St. Petersburg, FL",
+    "distance": 2,
     "emoji": "☕",
-    "certs": ["Direct Trade"],
+    "certs": [],
     "items": [
-      { "name": "Single-origin Coffee",  "lot": "RR-SO-0515" }
+      { "name": "Local Coffee Beans",  "lot": "CB-LB-0515" }
     ]
   }
 ]

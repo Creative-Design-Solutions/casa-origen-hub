@@ -59,10 +59,10 @@ small cloud worker for scheduled jobs
 - **Database:** Supabase or Neon free tier (Phase 3+)
 
 ### Orchestrated tools (not replaced, orchestrated)
-- **POS:** Square for Restaurants *(likely)* — Toast is alternative
+- **POS:** Toast *(confirmed)*
 - **Bookkeeping:** QuickBooks Online Plus
-- **AP + Inventory + COGS:** MarginEdge
-- **Payroll:** Gusto
+- **AP + Inventory + COGS:** MarginEdge *(confirmed)*
+- **Payroll:** Gusto *(confirmed)*
 - **Banking:** Relay or Mercury
 
 ---
@@ -120,7 +120,9 @@ origen-backend/
 
 ## 8. Current State
 
-- Phase 1 scaffold in progress (see todo list above).
-- Synthetic data MCP server being built.
+- Tech stack confirmed: Toast (POS), MarginEdge (AP/inventory/COGS), Gusto (payroll), QBO (bookkeeping).
+- Work Desk live at https://casa-origen-farm-kitchen.github.io/ — team hub for the founding team.
+- Synthetic data in place. MCP server scaffolds exist for POS adapter and traceability.
 - No real API credentials connected yet — all synthetic.
-- Bryan meets with Casa Origen team Monday to plant the traceability seed.
+- Toast adapter is the next real integration to build (replace the synthetic POS stub).
+- Juan Boccazzi's project files (equipment specs, renders, costing sheet, brand vision) shared — need Google auth to read programmatically.

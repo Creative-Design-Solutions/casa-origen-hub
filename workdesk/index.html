@@ -346,6 +346,47 @@
     `;
   }
 
+  // ── Projects section (Kanban) ──────────────────────────────────────────────
+
+  const STATUS_CYCLE = { todo: 'doing', doing: 'done', done: 'todo' };
+  const COL_LABELS   = { todo: 'Not Started', doing: 'In Progress', done: 'Done' };
+
+  function renderProjects() {
+    const el = document.getElementById('projects');
+    const cols = ['todo', 'doing', 'done'];
+
+    el.innerHTML = `
+      <div class="section-header">
+        <h1 class="section-title">Projects</h1>
+      </div>
+      <div class="kanban">
+        ${cols.map(col => `
+          <div class="kb-col" data-col="${col}">
+            <div class="kb-col-header">${esc(COL_LABELS[col])}</div>
+            ${projects.filter(p => p.status === col).map(p => `
+              <div class="kb-card" data-status="${p.status}" data-id="${p.id}">
+                <div class="kb-card-name">${esc(p.name)}</div>
+                ${p.note ? `<div class="kb-card-note">${esc(p.note)}</div>` : ''}
+              </div>
+            `).join('')}
+          </div>
+        `).join('')}
+      </div>
+      <p class="kb-hint">Click a card to move it to the next stage.</p>
+    `;
+
+    // Click handler — cycle status, sync pct, re-render both views
+    el.querySelectorAll('.kb-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const proj = projects.find(p => p.id === Number(card.dataset.id));
+        proj.status = STATUS_CYCLE[proj.status];
+        proj.pct = proj.status === 'done' ? 100 : proj.status === 'doing' ? Math.max(proj.pct, 10) : 0;
+        renderProjects();
+        renderHome();
+      });
+    });
+  }
+
   // Navigation
   document.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('click', () => {
@@ -357,6 +398,7 @@
   });
 
   renderHome();
+  renderProjects();
 </script>
 
 </body>

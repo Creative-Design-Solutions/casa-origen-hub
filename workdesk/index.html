@@ -387,6 +387,197 @@
     });
   }
 
+  // ── Sourcing section ──────────────────────────────────────────────────────
+
+  const vendors = [
+    { name: 'Worden Farm',     supply: 'Certified organic vegetables',   contact: 'Eva Worden',   method: 'Email',     notes: 'Sarasota, FL — 3-day lead time' },
+    { name: 'Lard & Lard',     supply: 'Grass-fed tallow',               contact: 'Kevin Lard',   method: 'Phone',     notes: 'Order Mondays for Thursday delivery' },
+    { name: 'Big Top Coffee',  supply: 'Local roast + retail bags',       contact: 'Jess',         method: 'Instagram', notes: 'St. Pete — pickup or delivery' },
+    { name: 'Fortunata Farm',  supply: 'Pasture-raised eggs',             contact: 'Maria',        method: 'Text',      notes: '2-day lead, limited qty — order weekly' },
+    { name: 'Suncoast Micro',  supply: 'Microgreens + edible flowers',    contact: 'Tom',          method: 'Email',     notes: 'Weekly harvest, contact by Wednesday' },
+  ];
+
+  function renderSourcing() {
+    const el = document.getElementById('sourcing');
+    el.innerHTML = `
+      <div class="section-header">
+        <h1 class="section-title">Sourcing</h1>
+      </div>
+      <div class="grid-2">
+        ${vendors.map(v => `
+          <div class="card">
+            <div style="margin-bottom:10px">
+              <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:3px">${esc(v.name)}</div>
+              <div style="font-size:0.8rem;color:var(--gold)">${esc(v.supply)}</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <div style="display:flex;gap:6px">
+                <span class="label" style="margin:0;flex-shrink:0;padding-top:1px">Contact</span>
+                <span style="font-size:0.8rem;color:var(--text-secondary)">${esc(v.contact)} · ${esc(v.method)}</span>
+              </div>
+              <div style="display:flex;gap:6px">
+                <span class="label" style="margin:0;flex-shrink:0;padding-top:1px">Notes</span>
+                <span style="font-size:0.8rem;color:var(--text-muted)">${esc(v.notes)}</span>
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  // ── Menu section ──────────────────────────────────────────────────────────
+
+  const menuItems = [
+    { category: 'Breakfast', name: 'Tallow Scramble',   status: 'final',   desc: 'Pasture eggs, garden herbs, house sourdough' },
+    { category: 'Breakfast', name: 'Grain Bowl',         status: 'testing', desc: 'Sprouted oats, seasonal fruit, local honey' },
+    { category: 'Breakfast', name: 'Avocado Toast',      status: 'concept', desc: 'House sourdough, EVOO, sea salt, microgreens' },
+    { category: 'Lunch',     name: 'Farm Salad',         status: 'final',   desc: 'Daily rotation, local greens, EVOO dressing' },
+    { category: 'Lunch',     name: 'Tallow Bowl',        status: 'testing', desc: 'Grass-fed beef, roasted roots, chimichurri' },
+    { category: 'Lunch',     name: 'Garden Wrap',        status: 'concept', desc: 'Seasonal veg, house tahini, sprouts' },
+    { category: 'Drinks',    name: 'Cold Brew',          status: 'final',   desc: 'Big Top beans, 20-hour steep' },
+    { category: 'Drinks',    name: 'Agua Fresca',        status: 'concept', desc: 'Seasonal fruit, no added sugar' },
+    { category: 'Retail',    name: 'House Tallow',       status: 'final',   desc: '8oz jar, grass-fed, rendered in-house' },
+    { category: 'Retail',    name: 'Big Top Beans',      status: 'final',   desc: '12oz bag, local roast' },
+    { category: 'Retail',    name: 'Agua Fresca Bottle', status: 'concept', desc: 'Bottled seasonal blend, 16oz' },
+  ];
+
+  const MENU_CATEGORIES = ['Breakfast', 'Lunch', 'Drinks', 'Retail'];
+
+  function renderMenu() {
+    const el = document.getElementById('menu');
+    el.innerHTML = `
+      <div class="section-header">
+        <h1 class="section-title">Menu</h1>
+      </div>
+      ${MENU_CATEGORIES.map(cat => {
+        const items = menuItems.filter(m => m.category === cat);
+        return `
+          <div style="margin-bottom:28px">
+            <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted);margin-bottom:12px;display:flex;align-items:center;gap:8px">
+              <span style="display:block;width:20px;height:1px;background:var(--border)"></span>
+              ${esc(cat)}
+              <span style="display:block;flex:1;height:1px;background:var(--border)"></span>
+            </div>
+            <div class="grid-3">
+              ${items.map(item => `
+                <div class="card">
+                  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px">
+                    <span style="font-size:0.88rem;font-weight:600;color:var(--text-primary)">${esc(item.name)}</span>
+                    <span class="tag tag-${item.status}" style="flex-shrink:0">${esc(item.status.charAt(0).toUpperCase() + item.status.slice(1))}</span>
+                  </div>
+                  <div style="font-size:0.78rem;color:var(--text-muted);line-height:1.5">${esc(item.desc)}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }).join('')}
+    `;
+  }
+
+  // ── Team section ──────────────────────────────────────────────────────────
+
+  const team = [
+    { name: 'Bryan Gallagher', role: 'Founder', initials: 'BG', contact: 'bryan@casaorigen.com', color: '#c4963a' },
+  ];
+
+  function renderTeam() {
+    const el = document.getElementById('team');
+    el.innerHTML = `
+      <div class="section-header">
+        <h1 class="section-title">Team</h1>
+      </div>
+      <div class="grid-3">
+        ${team.map(m => `
+          <div class="card" style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 16px;gap:10px">
+            <div style="
+              width:56px;height:56px;border-radius:50%;
+              background:${m.color}22;
+              border:2px solid ${m.color}55;
+              display:flex;align-items:center;justify-content:center;
+              font-family:'Cormorant Garamond',serif;
+              font-size:1.1rem;font-weight:400;
+              color:${m.color};
+            ">${esc(m.initials)}</div>
+            <div>
+              <div style="font-size:0.92rem;font-weight:600;color:var(--text-primary);margin-bottom:3px">${esc(m.name)}</div>
+              <div style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em">${esc(m.role)}</div>
+            </div>
+            <div style="font-size:0.78rem;color:var(--gold)">${esc(m.contact)}</div>
+          </div>
+        `).join('')}
+      </div>
+      <p style="margin-top:20px;font-size:0.78rem;color:var(--text-muted)">
+        Add team members by editing the <code style="background:var(--bg-raised);padding:1px 5px;border-radius:3px;font-size:0.72rem">team</code> array in index.html.
+      </p>
+    `;
+  }
+
+  // ── Links section ─────────────────────────────────────────────────────────
+
+  const linkGroups = [
+    {
+      group: 'Planning',
+      links: [
+        { label: 'Project Drive',     url: '#', desc: 'Shared Google Drive' },
+        { label: 'Brand Assets',      url: '#', desc: 'Logos, colors, fonts' },
+        { label: 'Opening Checklist', url: '#', desc: 'Master task list' },
+      ]
+    },
+    {
+      group: 'Design',
+      links: [
+        { label: 'Floor Plan',  url: '#', desc: 'Space layout CAD' },
+        { label: 'Menu Design', url: '#', desc: 'Print-ready files' },
+      ]
+    },
+    {
+      group: 'Operations',
+      links: [
+        { label: 'Staff Portal',   url: 'https://wisdomsurgery.team', desc: 'Timeclock + timesheets' },
+        { label: 'Supplier Docs',  url: '#', desc: 'Contracts + invoices' },
+      ]
+    },
+    {
+      group: 'External',
+      links: [
+        { label: 'Square Dashboard', url: '#',                                    desc: 'POS + payments' },
+        { label: 'Instagram',        url: 'https://instagram.com/casa.origen',    desc: '@casa.origen' },
+      ]
+    },
+  ];
+
+  function renderLinks() {
+    const el = document.getElementById('links');
+    el.innerHTML = `
+      <div class="section-header">
+        <h1 class="section-title">Links</h1>
+      </div>
+      <div class="grid-2">
+        ${linkGroups.map(group => `
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div class="label" style="margin-bottom:4px">${esc(group.group)}</div>
+            ${group.links.map(link => `
+              <a href="${esc(link.url)}" target="_blank" rel="noopener" style="text-decoration:none">
+                <div class="card" style="display:flex;align-items:center;gap:12px;padding:11px 14px">
+                  <div style="flex:1">
+                    <div style="font-size:0.85rem;font-weight:600;color:var(--text-primary);margin-bottom:2px">${esc(link.label)}</div>
+                    <div style="font-size:0.75rem;color:var(--text-muted)">${esc(link.desc)}</div>
+                  </div>
+                  <span style="color:var(--text-muted);font-size:0.8rem;flex-shrink:0">↗</span>
+                </div>
+              </a>
+            `).join('')}
+          </div>
+        `).join('')}
+      </div>
+      <p style="margin-top:20px;font-size:0.78rem;color:var(--text-muted)">
+        Update links by editing the <code style="background:var(--bg-raised);padding:1px 5px;border-radius:3px;font-size:0.72rem">linkGroups</code> array in index.html.
+      </p>
+    `;
+  }
+
   // Navigation
   document.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('click', () => {
@@ -399,6 +590,10 @@
 
   renderHome();
   renderProjects();
+  renderSourcing();
+  renderMenu();
+  renderTeam();
+  renderLinks();
 </script>
 
 </body>

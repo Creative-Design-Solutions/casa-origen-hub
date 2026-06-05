@@ -7,3 +7,4 @@ dist/
 outputs/*.md
 outputs/*.json
 outputs/*.txt
+workdesk/

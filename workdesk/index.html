@@ -295,6 +295,55 @@
 </main>
 
 <script>
+  // ── Data ──────────────────────────────────────────────────────────────────
+
+  const projects = [
+    { id: 1, name: 'Kitchen Layout',    note: 'Waiting on contractor quote',   status: 'doing', pct: 40 },
+    { id: 2, name: 'Coffee Program',    note: 'Sourcing local roasters',        status: 'doing', pct: 55 },
+    { id: 3, name: 'Menu Development',  note: 'Breakfast items v2 in testing', status: 'doing', pct: 65 },
+    { id: 4, name: 'Staff Hiring',      note: '',                               status: 'todo',  pct: 0  },
+    { id: 5, name: 'POS Setup',         note: 'Square for Restaurants',         status: 'todo',  pct: 5  },
+    { id: 6, name: 'Brand Identity',    note: 'Logo and colors finalized',      status: 'done',  pct: 100 },
+    { id: 7, name: 'Permit Applications', note: 'Filed June 2026',             status: 'done',  pct: 100 },
+  ];
+
+  const STATUS_META = {
+    doing: { color: '#c4963a', label: 'In Progress' },
+    todo:  { color: '#8b7355', label: 'Not Started' },
+    done:  { color: '#4a7850', label: 'Done' },
+  };
+
+  // ── Home section ──────────────────────────────────────────────────────────
+
+  function renderHome() {
+    const el = document.getElementById('home');
+    el.innerHTML = `
+      <div class="section-header">
+        <h1 class="section-title">Overview</h1>
+      </div>
+      <div class="grid-2">
+        ${projects.map(p => {
+          const meta = STATUS_META[p.status];
+          return `
+            <div class="card">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+                <span style="width:9px;height:9px;border-radius:50%;background:${meta.color};flex-shrink:0;display:inline-block"></span>
+                <span style="font-weight:600;color:var(--text-primary);font-size:0.88rem">${p.name}</span>
+              </div>
+              <div style="height:3px;background:var(--border);border-radius:2px;margin-bottom:8px">
+                <div style="height:3px;width:${p.pct}%;background:${meta.color};border-radius:2px;transition:width 0.3s"></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <span style="font-size:0.75rem;color:var(--text-muted)">${p.note || '&nbsp;'}</span>
+                <span style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:${meta.color}">${meta.label}</span>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    `;
+  }
+
   // Navigation
   document.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('click', () => {
@@ -304,6 +353,8 @@
       document.getElementById(item.dataset.section).classList.add('active');
     });
   });
+
+  renderHome();
 </script>
 
 </body>

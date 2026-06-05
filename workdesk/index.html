@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Casa Origen — Work Desk</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -15,6 +16,7 @@
       --text-muted:   #8b7355;
       --gold:         #c4963a;
       --green:        #4a7850;
+      --green-light:  var(--green-light);
       --terra:        #c4714a;
       --border:       rgba(240,235,224,0.08);
       --border-hover: rgba(196,150,58,0.3);
@@ -68,6 +70,11 @@
     }
 
     .nav-item {
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -154,7 +161,7 @@
       border-radius: 999px;
       border: 1px solid;
     }
-    .tag-final   { background: rgba(74,120,86,0.15);  color: #6ab880; border-color: rgba(74,120,86,0.25); }
+    .tag-final   { background: rgba(74,120,86,0.15);  color: var(--green-light); border-color: rgba(74,120,86,0.25); }
     .tag-testing { background: rgba(196,150,58,0.12); color: var(--gold); border-color: rgba(196,150,58,0.25); }
     .tag-concept { background: rgba(240,235,224,0.06); color: var(--text-muted); border-color: var(--border); }
 
@@ -186,7 +193,7 @@
     .kb-col[data-col="todo"]  .kb-col-header::before { background: var(--text-muted); }
     .kb-col[data-col="doing"] .kb-col-header { color: var(--gold); }
     .kb-col[data-col="doing"] .kb-col-header::before { background: var(--gold); }
-    .kb-col[data-col="done"]  .kb-col-header { color: #6ab880; }
+    .kb-col[data-col="done"]  .kb-col-header { color: var(--green-light); }
     .kb-col[data-col="done"]  .kb-col-header::before { background: var(--green); }
 
     .kb-card {
@@ -254,27 +261,27 @@
 
 <aside class="sidebar">
   <div class="sidebar-logo">
-    <img src="assets/logo.png" alt="Casa Origen">
+    <img src="assets/logo.png" alt="Casa Origen" onerror="this.style.display='none'">
   </div>
   <nav class="sidebar-nav">
-    <div class="nav-item active" data-section="home">
+    <button class="nav-item active" data-section="home">
       <span class="nav-icon">⊞</span> Home
-    </div>
-    <div class="nav-item" data-section="projects">
+    </button>
+    <button class="nav-item" data-section="projects">
       <span class="nav-icon">▤</span> Projects
-    </div>
-    <div class="nav-item" data-section="sourcing">
+    </button>
+    <button class="nav-item" data-section="sourcing">
       <span class="nav-icon">◎</span> Sourcing
-    </div>
-    <div class="nav-item" data-section="menu">
+    </button>
+    <button class="nav-item" data-section="menu">
       <span class="nav-icon">✦</span> Menu
-    </div>
-    <div class="nav-item" data-section="team">
+    </button>
+    <button class="nav-item" data-section="team">
       <span class="nav-icon">◈</span> Team
-    </div>
-    <div class="nav-item" data-section="links">
+    </button>
+    <button class="nav-item" data-section="links">
       <span class="nav-icon">⬡</span> Links
-    </div>
+    </button>
   </nav>
 </aside>
 

@@ -319,31 +319,51 @@
 
   function renderHome() {
     const el = document.getElementById('home');
+    const openingDate = new Date('2026-09-01');
+    const today = new Date();
+    const daysLeft = Math.max(0, Math.ceil((openingDate - today) / (1000 * 60 * 60 * 24)));
+    const doing = projects.filter(p => p.status === 'doing').length;
+    const done  = projects.filter(p => p.status === 'done').length;
+
     el.innerHTML = `
-      <div class="section-header">
-        <h1 class="section-title">Overview</h1>
+    <div class="section-header">
+      <h1 class="section-title">Overview</h1>
+    </div>
+    <div style="display:flex;gap:12px;margin-bottom:24px">
+      <div class="card" style="flex:1;text-align:center;padding:16px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold);line-height:1">${daysLeft}</div>
+        <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px">Days to Opening</div>
       </div>
-      <div class="grid-2">
-        ${projects.map(p => {
-          const meta = STATUS_META[p.status] ?? STATUS_META['todo'];
-          return `
-            <div class="card">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
-                <span style="width:9px;height:9px;border-radius:50%;background:${meta.color};flex-shrink:0;display:inline-block"></span>
-                <span style="font-weight:600;color:var(--text-primary);font-size:0.88rem">${esc(p.name)}</span>
-              </div>
-              <div style="height:3px;background:var(--border);border-radius:2px;margin-bottom:8px">
-                <div style="height:3px;width:${p.pct}%;background:${meta.color};border-radius:2px;transition:width 0.3s"></div>
-              </div>
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <span style="font-size:0.75rem;color:var(--text-muted)">${esc(p.note) || '&nbsp;'}</span>
-                <span style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:${meta.color}">${esc(meta.label)}</span>
-              </div>
+      <div class="card" style="flex:1;text-align:center;padding:16px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold);line-height:1">${doing}</div>
+        <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px">In Progress</div>
+      </div>
+      <div class="card" style="flex:1;text-align:center;padding:16px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--green);line-height:1">${done}</div>
+        <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px">Done</div>
+      </div>
+    </div>
+    <div class="grid-2">
+      ${projects.map(p => {
+        const meta = STATUS_META[p.status] ?? STATUS_META['todo'];
+        return `
+          <div class="card">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+              <span style="width:9px;height:9px;border-radius:50%;background:${meta.color};flex-shrink:0;display:inline-block"></span>
+              <span style="font-weight:600;color:var(--text-primary);font-size:0.88rem">${esc(p.name)}</span>
             </div>
-          `;
-        }).join('')}
-      </div>
-    `;
+            <div style="height:3px;background:var(--border);border-radius:2px;margin-bottom:8px">
+              <div style="height:3px;width:${p.pct}%;background:${meta.color};border-radius:2px;transition:width 0.3s"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <span style="font-size:0.75rem;color:var(--text-muted)">${esc(p.note) || '&nbsp;'}</span>
+              <span style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:${meta.color}">${esc(meta.label)}</span>
+            </div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
   }
 
   // ── Projects section (Kanban) ──────────────────────────────────────────────
